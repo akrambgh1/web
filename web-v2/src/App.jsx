@@ -6,7 +6,7 @@ import Contact from "../pages/Contact";
 import axios from "axios";
 
 import Admin from "../pages/admin";
-axios.defaults.baseURL = import.meta.env.VITE_API_URL;
+axios.defaults.baseURL =https://weblocators-backend.onrender.com;
 // Ensure the environment variable is properly accessed
 export default function App() {
   return (
