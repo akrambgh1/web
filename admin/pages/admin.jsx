@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import StatusDropdown from "../src/components/status"
 import { CalendarMinus2 } from 'lucide-react';
-const socket = io('https://web-pi-pied.vercel.app');
+const socket = io('https://web-nb16.vercel.app');
 
  
 
@@ -43,7 +43,7 @@ export default function Admin() {
       updated = updated.filter((form) => form.userId?.type === type);
     }
     if (status !== 'all') {
-      updated = updated.filter((form) => form.status === status);
+      updated = updated.filter((form) => form?.status === status);
     }
     setFilteredForms(updated);
   };
@@ -66,7 +66,7 @@ export default function Admin() {
       });
 
       const updated = forms.map((form) =>
-        form._id === formId ? { ...form, status: res.data.status } : form
+        form?._id === formId ? { ...form, status: res.data.status } : form
       );
       setForms(updated);
       filterForms(selectedType, selectedStatus);
