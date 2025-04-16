@@ -75,8 +75,8 @@ export default function Admin() {
     }
   };
 
-  const types = [...new Set(forms.map((form) => form.userId?.type).filter(Boolean))];
-  const statuses = [...new Set(forms.map((form) => form.status).filter(Boolean))];
+  const types = [...new Set(forms?.map((form) => form.userId?.type).filter(Boolean))];
+  const statuses = [...new Set(forms?.map((form) => form?.status).filter(Boolean))];
 
   return (
     <div className="p-4 bg-white min-h-screen">
