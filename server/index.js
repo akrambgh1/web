@@ -25,7 +25,7 @@ const server = http.createServer(app);
 const socketio = require('socket.io');
 const io = socketio(server, {
   cors: {
-    origin: "http://localhost:5173", // Change this to your domain in production
+    origin: "web-pi-pied.vercel.app", // Change this to your domain in production
     methods: ["GET", "POST"]
   }
 });
