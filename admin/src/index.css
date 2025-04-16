@@ -1,0 +1,17 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
+
+
+@font-face {
+  font-family: InterVariable;
+  src: url(/src/assets/fonts/InterVariable.woff2) format("woff2");
+}
+
+body {
+  font-family: "InterVariable", sans-serif;
+  background-color: #1e1e1e;
+  color: black;
+  overflow: auto;
+  height: 100dvh;
+}
+
