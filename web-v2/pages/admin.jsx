@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import StatusDropdown from "../src/components/status"
 import { CalendarMinus2 } from 'lucide-react';
-const socket = io('http://localhost:5000');
+const socket = io('https://web-nb16.vercel.app/');
 
  
 
@@ -17,7 +17,7 @@ export default function Admin() {
   useEffect(() => {
     const fetchForms = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/form');
+        const res = await axios.get('/api/form');
         setForms(res.data);
         setFilteredForms(res.data);
       } catch (err) {
@@ -60,7 +60,7 @@ export default function Admin() {
 
   const handleStatusChange = async (formId, newStatus) => {
     try {
-      const res = await axios.put('http://localhost:5000/api/form/status', {
+      const res = await axios.put('/api/form/status', {
         formId,
         status: newStatus,
       });
