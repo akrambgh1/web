@@ -3,7 +3,7 @@ const router = express.Router();
 const { submitForm,getAllForms, updateFormStatus } = require('../controllers/formController');
 const cors = require('cors');
 router.use(cors({
-    origin: 'http://localhost:5173',
+    origin: 'web-pi-pied.vercel.app',
     credentials: true
   }));
   
