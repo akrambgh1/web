@@ -5,7 +5,6 @@ import { Toaster } from "react-hot-toast";
 import Contact from "../pages/Contact";
 import axios from "axios";
 
-import Admin from "../pages/admin";
 axios.defaults.baseURL =import.meta.env.VITE_API_URL;
 // Ensure the environment variable is properly accessed
 export default function App() {
@@ -21,7 +20,7 @@ export default function App() {
 
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="/admin" element={<Admin/>} />
+       
 
       </Routes>
     </Router>
