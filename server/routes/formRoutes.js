@@ -3,7 +3,7 @@ const router = express.Router();
 const { submitForm,getAllForms, updateFormStatus } = require('../controllers/formController');
 const cors = require('cors');
 router.use(cors({
-    origin: 'https://weblocators-frontend.onrender.com/',
+    origin: 'https://weblocators-frontend.onrender.com',
     credentials: true
   }));
   
