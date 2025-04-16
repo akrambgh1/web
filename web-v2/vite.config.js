@@ -14,6 +14,9 @@ export default defineConfig({
   },
   server: {
     host: '0.0.0.0', // Expose the server to the network
-    port: 5173,       // Optional: Specify a custom port
+    port: 5173,  
+    
+    allowedHosts: ['weblocators-frontend.onrender.com']
+
   },
 });
