@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import StatusDropdown from "../src/components/status"
 import { CalendarMinus2 } from 'lucide-react';
-const socket = io('https://web-nb16.vercel.app/');
+const socket = io('https://weblocators-backend.onrender.com/');
 
  
 
