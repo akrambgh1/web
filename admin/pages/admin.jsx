@@ -60,7 +60,7 @@ export default function Admin() {
 
   const handleStatusChange = async (formId, newStatus) => {
     try {
-      const res = await axios.put('http://localhost:5000/api/form/status', {
+      const res = await axios.put('/api/form/status', {
         formId,
         status: newStatus,
       });
