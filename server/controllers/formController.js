@@ -21,7 +21,7 @@ function checkDomain(domain) {
 const submitForm = async (req, res) => {
   const { name, email, message, type, budget } = req.body;
 
-  if (!name || !email || !message || !type || !budget) {
+  if (!name || !email  || !type || !budget) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
