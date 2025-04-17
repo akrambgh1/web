@@ -51,7 +51,7 @@ export default function Contact() {
     } catch (error) {
       console.error("Submission error:", error);
       setResponseMsg("Submission failed.");
-      toast.error("Submission failed.");
+      toast.error(res.data.error);
     }
   };
 
