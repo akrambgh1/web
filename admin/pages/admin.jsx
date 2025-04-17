@@ -17,7 +17,7 @@ export default function Admin() {
   useEffect(() => {
     const fetchForms = async () => {
       try {
-        const res = await axios.get('/admin/api/form/admin', {
+        const res = await axios.get('/api/form/admin', {
           headers: { 'Content-Type': 'application/json' },
         });
         setForms(res.data);
