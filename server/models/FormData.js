@@ -4,7 +4,7 @@ const formSchema = new mongoose.Schema({
   userId:{
       name: { type: String, required: true },
       email: { type: String, required: true },
-      message: { type: String, required: true },
+      message: { type: String },
   type: { type: String, },
   budget: { type: String, },
     },

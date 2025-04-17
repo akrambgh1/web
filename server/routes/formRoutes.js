@@ -9,6 +9,7 @@ router.use(cors({
   
 
 router.post('/', submitForm);
+
 router.get('/', getAllForms);
 router.put('/status', updateFormStatus);
 
