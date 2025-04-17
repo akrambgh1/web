@@ -8,7 +8,7 @@ router.use(cors({
   }));
   
 
-router.post('/api/form', submitForm);
+router.post('/', submitForm);
 
 router.get('/admin', getAllForms);
 router.put('/status', updateFormStatus);
