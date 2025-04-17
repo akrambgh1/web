@@ -45,15 +45,26 @@ export default function Contact() {
       toast.success(msg);
       setTimeout(() => {
         navigate("/");
-      }, 1000); // Redirect after 2 seconds
-      // Reset form fields on success
+      }, 1000);
       setFormData({ name: "", email: "", message: "", type: "", budget: "" });
     } catch (error) {
       console.error("Submission error:", error);
-      setResponseMsg("Submission failed.");
-      toast.error(res.data.error);
+  
+      // Try to extract error message from different sources
+      let errMsg = "Submission failed.";
+      if (error.response) {
+        errMsg =
+          error.response.data?.error ||
+          error.response.data?.message ||
+          error.response.headers["error-message"] || // custom header
+          "Something went wrong.";
+      }
+  
+      setResponseMsg(errMsg);
+      toast.error(errMsg);
     }
   };
+  
 
   useEffect(() => {
     if (!containerRef.current) return;
