@@ -23,7 +23,7 @@ const newsletter= async (req, res) => {
 const getNewsLetter = async (reg, res) => {
     try {
         const letters = await newsLetterSchema.find().sort({ createdAt: -1 }); // Sort by newest
-        res.status(200).json(forms);
+        res.status(200).json(letters);
       } catch (error) {
         console.error('Error fetching forms:', error);
         res.status(500).json({ error: 'Failed to fetch forms.' });
