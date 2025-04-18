@@ -1,44 +1,37 @@
-import { useEffect, useState } from 'react';
+
+import axios from 'axios';
 import io from 'socket.io-client';
+import { useEffect ,useState} from 'react';
 
 const socket = io('https://web-nb16.vercel.app');
-
 export default function Newsletter() {
     const [letters, setLetters] = useState([]);
     const [loading, setLoading] = useState(true);
 
-    // Custom function to fetch data
-    
+    useEffect(() => {
+        const fetchletters = async () => {
+            try {
+                const res = await axios.get('/api/form/admin/emails', {
+                    headers: { 'Content-Type': 'application/json' },
+                });
+                setLetters(res.data);
+            } catch (err) {
+                console.error('Error fetching forms:', err);
+            } finally {
+                setLoading(false); // Set loading to false after fetching is complete
+            }
+        };
 
-    useEffect(() => {const fetchLetters = async () => {
-        try {
-            const response = await fetch('/api/form/admin/emails', {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-            });
-            const data = await response.json();
-            setLetters(data);
-        } catch (err) {
-            console.error('Error fetching forms:', err);
-        } finally {
-            setLoading(false);
-        }
-    };
-        // Initial fetch when component mounts
-        fetchLetters();
+        fetchletters();
 
-        // Socket listener for new emails
         socket.on('newletters', (letterData) => {
             setLetters((prev) => [...prev, letterData]);
         });
 
-        // Cleanup socket on unmount
         return () => {
             socket.off('newletters');
         };
-    }, []); // Empty dependency array means this runs once when the component mounts
+    }, []);
 
     return (
         <div>
