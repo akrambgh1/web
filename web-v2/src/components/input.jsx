@@ -1,12 +1,15 @@
 
 import styled from 'styled-components';
 import axios from 'axios';
+import { useState } from 'react';
+import toast from 'react-hot-toast';
 const Input = () => {
     const [newsletter, setNewsletter] = useState({
         
         email: "",
         
-      });
+    });
+    const [ResponseMsg, setResponseMsg] =useState("")
      const handleChange = (e) => {
         setNewsletter({
           ...newsletter,
@@ -21,7 +24,7 @@ const Input = () => {
           });
           const msg = res.data.message || " email submitted successfully!";
           setResponseMsg(msg);
-          toast.success(msg);
+          toast.success(ResponseMsg);
           
           setNewsletter({  email: "" });
         } catch (error) {
