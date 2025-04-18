@@ -165,7 +165,7 @@ export default function Home() {
           }}
           className="fixed top-0 left-0 w-screen h-screen bg-blue-600 z-[90] flex items-center justify-center overflow-hidden"
         >
-          <h1 className="text-white text-[7rem] tracking-tighter">Weblocators</h1>
+          <h1 className="text-white text-[7rem] max-md:text-[4rem] tracking-tighter">Weblocators</h1>
         </motion.div>
 
         <section className="flex flex-col max-md:gap-[0rem] relative gap-[2rem] z-49">

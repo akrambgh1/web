@@ -49,7 +49,7 @@ const Input = () => {
           <form onSubmit={handleSubmit}>
       <div className="input-group">
         <input type="email" onChange={handleChange} className="input  w-[20rem] max-md:w-[12.5rem]" id="Email" name="Email" placeholder="contatus@weblocators.com" autoComplete="off" />
-        <input className="button--submit" defaultValue="Subscribe" type="submit" />
+        <button className="button--submit" type="submit" >Subscribe</button>
       </div></form>
     </StyledWrapper>
   );
