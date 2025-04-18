@@ -20,7 +20,7 @@ const newsletter= async (req, res) => {
       }
 };
 
-const getNewsLetter = async (reg, res) => {
+const getNewsLetter = async (req, res) => {
     try {
         const letters = await newsLetterSchema.find().sort({ createdAt: -1 }); // Sort by newest
         res.status(200).json(letters);
