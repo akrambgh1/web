@@ -13,7 +13,7 @@ const Input = () => {
      const handleChange = (e) => {
         setNewsletter({
           ...newsletter,
-          [e.target.email]: e.target.value,
+          email: e.target.value,
         });
       };
     const handleSubmit = async (e) => {
