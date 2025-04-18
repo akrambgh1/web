@@ -34,7 +34,7 @@
     "react-router-dom": "^7.3.0",
     "react-syntax-highlighter": "^5.8.0",
     "socket.io-client": "^4.8.1",
-    "styled-components": "^6.1.15",
+    "styled-components": "^6.1.17",
     "tailwind-merge": "^3.2.0",
     "tailwind-variants": "^1.0.0",
     "tailwindcss": "^4.1.4",

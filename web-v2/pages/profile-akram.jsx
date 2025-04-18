@@ -83,15 +83,15 @@ const AkramCV = () => {
             <section>
               <h2 className="text-xl font-semibold text-gray-700 mb-2">📫 Contact</h2>
               <ul className="text-blue-600 space-y-1">
-                <li>Email: your.email@example.com</li>
-                <li>Phone: +213 6XXXXXXXX</li>
-                <li>LinkedIn: linkedin.com/in/yourname</li>
-                <li>Portfolio: yourportfolio.com</li>
+                <li>Email: akram@weblocators.com</li>
+                <li>Phone: +213 798 73 22 82</li>
+                <li>Github: <a href="https://github.com/akrambgh1"> github.com/akrambgh1</a></li>
+                
               </ul>
             </section>
 
             <section>
-              <h2 className="text-xl font-semibold text-gray-700 mb-2">🌐 WebLocators</h2>
+              <h2 className="text-xl font-semibold text-gray-700 mb-2">WebLocators</h2>
               <div className="text-gray-600 space-y-4">
                 <p>As CEO &amp; Founder of <span className="font-semibold text-blue-600">WebLocators</span>, I lead a full-service web development agency delivering end-to-end digital solutions.</p>
                 <ul className="list-disc list-inside">

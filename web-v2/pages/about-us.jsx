@@ -2,8 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Code, Layers, ShieldCheck, Activity, GitBranch, Users, FileText, CheckCircle2 } from 'lucide-react';
 import { Card } from '@/components/ui/card';
-import { Button } from '@/components/ui/button';
-import { Separator } from '@/components/ui/separator';
+import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 
 const sections = [
@@ -98,11 +97,13 @@ const sections = [
 
 export default function AboutUs() {
     return (
-    <setion className=" relative bg-white">
-    <div className="w-full bg-gray-50  text-gray-800 py-16 px-6 md:px-20">
+        <section className="  relative justify-center ">
+            
+            <div className="w-full bg-gray-50  flex justify-center  text-gray-800 py-16 px-4 md:px-20">
+                <Navbar></Navbar>
       <div className="max-w-7xl  mx-auto space-y-12">
         {/* Page Title */}
-        <header className="text-center">
+        <header className="text-center mt-10">
           <h1 className="text-5xl font-extrabold text-blue-700 mb-4 relative inline-block">
             About Us
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-blue-400 to-blue-700 rounded-full animate-pulse"></span>
@@ -155,6 +156,8 @@ export default function AboutUs() {
                     >
                       <Footer></Footer>
                     </section>
-            </setion>
+        </section>
+        
+            
   );
 }
