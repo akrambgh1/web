@@ -2,11 +2,9 @@ const newsLetterSchema = require("../models/newsletter")
 
 
 const newsletter= async (req, res) => {
-    const email = req.body
+    const { email } = req.body
      try {
-        const newletter = new newsLetterSchema({
-          email
-        });
+        const newletter = new newsLetterSchema({email});
     
         await newletter.save();
     
