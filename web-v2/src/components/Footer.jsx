@@ -32,7 +32,7 @@ export default function Footer() {
             <img src="/Weblocators2.png" />
           </div>
           <div className="w-[60%] h-[20vh] rounded-[15px] px-5 relative flex flex-col justify-evenly max-md:w-full bg-[#2163f1] max-md:h-auto max-md:rounded-[5px] max-md:p-4 ">
-            <div className="flex items-center justify-evenly gap-4 list-none pt-2 max-md:flex max-md:w-full max-md:justify-between max-md:p-0 text-2xl text-white">
+            <div className="flex items-center justify-evenly gap-4 list-none pt-2 max-md:flex max-md:w-full max-md:justify-center max-md:p-0 text-2xl text-white">
               <Input/>
             </div>
 

@@ -48,7 +48,7 @@ const Input = () => {
       <StyledWrapper>
           <form onSubmit={handleSubmit}>
       <div className="input-group">
-        <input type="email" onChange={handleChange} className="input" id="Email" name="Email" placeholder="contatus@weblocators.com" autoComplete="off" />
+        <input type="email" onChange={handleChange} className="input  w-[20rem] max-md:w-[12.5rem]" id="Email" name="Email" placeholder="contatus@weblocators.com" autoComplete="off" />
         <input className="button--submit" defaultValue="Subscribe" type="submit" />
       </div></form>
     </StyledWrapper>
@@ -63,7 +63,7 @@ const StyledWrapper = styled.div`
 
   .input {
     min-height: 50px;
-    max-width: 15rem;
+  
     padding: 0 1rem;
     color: #fff;
     font-size: 15px;
