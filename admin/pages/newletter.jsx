@@ -11,7 +11,7 @@ export default function Newsletter() {
     const fetchLetters = async () => {
         try {
             const response = await fetch('/api/form/admin/emails', {
-                method: 'GET',
+               
                 headers: {
                     'Content-Type': 'application/json',
                 },
