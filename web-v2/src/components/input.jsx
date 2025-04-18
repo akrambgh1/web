@@ -1,13 +1,53 @@
-import React from 'react';
-import styled from 'styled-components';
 
+import styled from 'styled-components';
+import axios from 'axios';
 const Input = () => {
+    const [newsletter, setNewsletter] = useState({
+        
+        email: "",
+        
+      });
+     const handleChange = (e) => {
+        setNewsletter({
+          ...newsletter,
+          [e.target.email]: e.target.value,
+        });
+      };
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        try {
+          const res = await axios.post("emails/api/form", newsletter, {
+            headers: { "Content-Type": "application/json" },
+          });
+          const msg = res.data.message || " email submitted successfully!";
+          setResponseMsg(msg);
+          toast.success(msg);
+          
+          setNewsletter({  email: "" });
+        } catch (error) {
+          console.error("Submission error:", error);
+      
+          // Try to extract error message from different sources
+          let errMsg = "Submission failed.";
+          if (error.response) {
+            errMsg =
+              error.response.data?.error ||
+              error.response.data?.message ||
+              error.response.headers["error-message"] || // custom header
+              "Something went wrong.";
+          }
+      
+          setResponseMsg(errMsg);
+          toast.error(errMsg);
+        }
+      };
   return (
-    <StyledWrapper>
+      <StyledWrapper>
+          <form onSubmit={handleSubmit}>
       <div className="input-group">
-        <input type="email" className="input" id="Email" name="Email" placeholder="contatus@weblocators.com" autoComplete="off" />
+        <input type="email" onChange={handleChange} className="input" id="Email" name="Email" placeholder="contatus@weblocators.com" autoComplete="off" />
         <input className="button--submit" defaultValue="Subscribe" type="submit" />
-      </div>
+      </div></form>
     </StyledWrapper>
   );
 }
