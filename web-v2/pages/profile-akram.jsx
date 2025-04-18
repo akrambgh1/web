@@ -98,7 +98,7 @@ const AkramCV = () => {
               </h2>
               <ul className="text-blue-600 space-y-1">
                 <li>Email: akram@weblocators.com</li>
-                <li>Phone: +213 798 73 22 82</li>
+               a <li>Phone: <a href="tel:+213 798 73 22 82">+213 798 73 22 82</a></li>
                 <li>
                   Github:{" "}
                   <a href="https://github.com/akrambgh1">
