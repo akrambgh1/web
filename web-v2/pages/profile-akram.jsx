@@ -26,53 +26,32 @@ const AkramCV = () => {
                 🧠 About Me
               </h2>
               <div className="text-gray-600 leading-relaxed space-y-4">
-                <p>
-                  I'm a first-year Bachelor's in Computer Science student (L1
-                  Informatique) at the University of Science and Technology
-                  Houari Boumediene (USTHB). I specialize in end-to-end web
-                  development using modern JavaScript technologies.
-                </p>
-                <p>
-                  I started coding at{" "}
-                  <span className="font-medium text-blue-600">15</span> years old,
-                  initially building simple static sites with HTML and CSS. My
-                  curiosity quickly led me to JavaScript and full-stack
-                  development, fueled by self-learning and hands-on
-                  experimentation.
-                </p>
-                <p>
-                  With <span className="font-medium text-blue-600">React</span>,
-                  I build component-driven frontends, leveraging hooks for state
-                  and effect management, React Router for client-side
-                  navigation, and Context API for global state handling. My UIs
-                  are responsive, accessible, and optimized for performance.
-                </p>
-                <p>
-                  On the server side, I use{" "}
-                  <span className="font-medium text-blue-600">Node.js</span>{" "}
-                  paired with{" "}
-                  <span className="font-medium text-blue-600">ExpressJS</span>
-                  to create RESTful APIs and middleware-driven architectures. I
-                  implement routing, authentication, and error handling,
-                  ensuring scalable and maintainable backend services.
-                </p>
-                <p>
-                  For data storage, I work with{" "}
-                  <span className="font-medium text-blue-600">MongoDB</span>,
-                  designing flexible, schema-less collections. I optimize
-                  queries through indexing, implement aggregation pipelines, and
-                  ensure data consistency and integrity across distributed
-                  applications.
-                </p>
-                <p>
-                  I’m also adept at integrating{" "}
-                  <span className="font-medium text-blue-600">Firebase</span>{" "}
-                  for real-time databases, authentication, and hosting to
-                  accelerate development cycles. Currently, I'm diving into
-                  Next.js to enhance SEO and performance with server-side
-                  rendering and static site generation.
-                </p>
-              </div>
+  <p>
+    I'm a first-year Bachelor's in Computer Science student (L1 Informatique) at the University of Science and Technology
+    Houari Boumediene (USTHB). I specialize in full-stack web development using modern JavaScript technologies.
+  </p>
+  <p>
+    I started coding at <span className="font-medium text-blue-600">15</span> years old , creating static websites with HTML and CSS. 
+    My curiosity soon led me to JavaScript and full-stack development, where I honed my skills through personal projects and self-learning.
+  </p>
+  <p>
+    With <span className="font-medium text-blue-600">React</span>, I build interactive frontends using hooks for state and effects, 
+    React Router for navigation, and Context API for managing global state. My UIs are responsive, accessible, and fast.
+  </p>
+  <p>
+    On the backend, I use <span className="font-medium text-blue-600">Node.js</span> and <span className="font-medium text-blue-600">ExpressJS</span> to develop RESTful APIs with structured routing, secure authentication, and robust error handling.
+  </p>
+  <p>
+    For databases, I rely on <span className="font-medium text-blue-600">MongoDB</span>, designing flexible schemas and optimizing performance 
+    with indexing and aggregation pipelines.
+  </p>
+  <p>
+    I also use <span className="font-medium text-blue-600">Firebase</span> for real-time features, user authentication, and fast deployment. 
+    Currently, I'm exploring <span className="font-medium text-blue-600">Next.js</span> to take advantage of server-side rendering and improved SEO.
+  </p>
+</div>
+
+
             </section>
 
             <section>
