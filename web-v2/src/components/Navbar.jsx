@@ -128,7 +128,7 @@ const Navbar = () => {
 
             <div  style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
               <motion.li
-                onClick={() => navigate("/About")}
+                onClick={() => navigate("/About-us")}
                 initial={{ translateY: "200%" }}
                 animate={isActive ? { translateY: 0 } : { translateY: "200%" }}
                 transition={{
