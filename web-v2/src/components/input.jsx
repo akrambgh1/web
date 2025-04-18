@@ -19,7 +19,7 @@ const Input = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-          const res = await axios.post("emails/api/form", newsletter, {
+          const res = await axios.post("api/form/emails", newsletter, {
             headers: { "Content-Type": "application/json" },
           });
           const msg = res.data.message || " email submitted successfully!";
