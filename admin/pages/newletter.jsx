@@ -8,10 +8,12 @@ export default function Newsletter() {
     const [loading, setLoading] = useState(true);
 
     // Custom function to fetch data
-    const fetchLetters = async () => {
+    
+
+    useEffect(() => {const fetchLetters = async () => {
         try {
             const response = await fetch('/api/form/admin/emails', {
-               
+                method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                 },
@@ -24,8 +26,6 @@ export default function Newsletter() {
             setLoading(false);
         }
     };
-
-    useEffect(() => {
         // Initial fetch when component mounts
         fetchLetters();
 
