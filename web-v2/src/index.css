@@ -10,7 +10,6 @@
 
 body {
   font-family: "InterVariable", sans-serif;
-  background-color: #1e1e1e;
   color: black;
   overflow: auto;
   height: 100dvh;
@@ -131,4 +130,3 @@ body {
     @apply bg-background text-foreground;
   }
 }
-
