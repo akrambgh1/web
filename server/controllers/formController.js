@@ -19,9 +19,12 @@ function checkDomain(domain) {
 }
 
 const submitForm = async (req, res) => {
-  const { name, email, message, type, budget } = req.body;
+  const { name, email, message, type } = req.body;
 
-  if (!name || !email  || !type || !budget) {
+   if (
+  !name?.trim() ||
+  !email?.trim() ||
+  !type?.trim()) {
     return res.status(400).json({ error: 'All fields are required.' });
   }
 
@@ -38,20 +41,20 @@ const submitForm = async (req, res) => {
 
   try {
     const newForm = new formSchema({
-      userId: { name, email, message, type, budget }
+      userId: { name, email, message, type }
     });
 
     await newForm.save();
 
-    console.log('Form Data Received:', { name, email, message, type, budget });
+    console.log('Form Data Received:', { name, email, message, type });
 
     // Emit real-time update
     req.io.emit('newForm', {
       name,
       email,
       message,
-      type,
-      budget
+      type
+      
     });
 
     res.status(201).json({ message: 'Form submitted successfully!' });

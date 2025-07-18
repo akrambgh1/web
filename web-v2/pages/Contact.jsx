@@ -20,7 +20,7 @@ export default function Contact() {
     email: "",
     message: "",
     type: "",
-    budget: "",
+   
   });
   const [responseMsg, setResponseMsg] = useState("");
   const [currentStep, setCurrentStep] = useState(0);
@@ -46,7 +46,7 @@ export default function Contact() {
       setTimeout(() => {
         navigate("/");
       }, 1000);
-      setFormData({ name: "", email: "", message: "", type: "", budget: "" });
+      setFormData({ name: "", email: "", message: "", type: "" });
     } catch (error) {
       console.error("Submission error:", error);
   
@@ -83,7 +83,7 @@ export default function Contact() {
 
   return (
     <>
-      <section className="flex w-full justify-center" ref={containerRef}>
+      <section className="flex w-full justify-center bg-black/90" ref={containerRef}>
         <Navbar />
         <form onSubmit={handleSubmit}>
           <div className="grid p-4 h-screen w-screen gap-x-[0.52rem] gap-y-[0.52rem] grid-rows-[1fr_1px_1fr_1px_1fr] grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] auto-cols-fr">
@@ -93,7 +93,7 @@ export default function Contact() {
                 <button
                   type="button"
                   onClick={() => setCurrentStep(currentStep - 1)}
-                  className="flex items-center gap-2 bg-gray-800 text-white font-bold py-2 px-4 rounded-2xl">
+                  className="flex items-center gap-2 cursor-pointer bg-gray-800 text-white font-bold py-2 px-4 rounded-2xl">
                   <MoveLeft color="#fff" />
                   <ScrambleText
                     textSize="text-1xl"
@@ -111,9 +111,8 @@ export default function Contact() {
                   text={
                     currentStep === 0
                       ? "Hello there!"
+                      
                       : currentStep === 1
-                      ? "Choose your budget range"
-                      : currentStep === 2
                       ? "A brief overview"
                       : ""
                   }
@@ -126,11 +125,10 @@ export default function Contact() {
                   text={
                     currentStep === 0
                       ? "Choose how we can help you"
+                     
                       : currentStep === 1
-                      ? "for this project"
-                      : currentStep === 2
                       ? "of your project"
-                      : currentStep === 3
+                      : currentStep === 2
                       ? "How can we address you?"
                       : ""
                   }
@@ -148,7 +146,7 @@ export default function Contact() {
                     setType("Custom website");
                     setFormData({ ...formData, type: "Custom website" });
                   }}
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  className="flex rounded-xl hover:bg-white duration-300 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">Custom website</h1>
                 </div>
                 <div className="bg-gray-400 opacity-30"></div>
@@ -159,7 +157,7 @@ export default function Contact() {
                     setType("Custom Shop");
                     setFormData({ ...formData, type: "Custom Shop" });
                   }}
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  className="flex rounded-xl hover:bg-white duration-300 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">Custom Shop</h1>
                 </div>
                 <div className="bg-gray-400 opacity-30"></div>
@@ -170,7 +168,7 @@ export default function Contact() {
                     setType("website remake");
                     setFormData({ ...formData, type: "website remake" });
                   }}
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">website remake</h1>
                 </div>
                 <div className="bg-gray-400 opacity-30"></div>
@@ -181,7 +179,7 @@ export default function Contact() {
                     setType("landing page");
                     setFormData({ ...formData, type: "landing page" });
                   }}
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">landing page</h1>
                 </div>
                 <div className="bg-gray-400 opacity-30"></div>
@@ -192,234 +190,17 @@ export default function Contact() {
                     setType("complex web app");
                     setFormData({ ...formData, type: "complex web app" });
                   }}
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">complex web app</h1>
                 </div>
               </div>
             )}
 
-            {/* Step 1: Choose Budget Options */}
-            {currentStep === 1 && (
-              <div className="grid rounded grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
-                {type === "Custom website" ? (
-                  <>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$500 - $1,500" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$500 - $1,500"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({
-                          ...formData,
-                          budget: "$1,000 - $10,000",
-                        });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$1,000 - $10,000"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$10,000+" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$10,000+"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                  </>
-                ) : type === "Custom Shop" ? (
-                  <>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "1,500 - $5,000" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="1,500 - $5,000"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({
-                          ...formData,
-                          budget: "$5,000 - $15,000+",
-                        });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$5,000 - $15,000+"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                  </>
-                ) : type === "website remake" ? (
-                  <>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$500 - $1,500" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$500 - $1,500"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$1,500 - $5,000" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$1,500 - $5,000"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({
-                          ...formData,
-                          budget: "$5,000 - $10,000+",
-                        });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$5,000 - $10,000+"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                  </>
-                ) : type === "landing page" ? (
-                  <>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$300 - $500" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$300 - $500"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$500 - $1,500" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$500 - $1,500"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                  </>
-                ) : type === "complex web app" ? (
-                  <>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$300 - $500" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$300 - $500"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                    <div className="bg-gray-400 opacity-30"></div>
-                    <div
-                      onClick={() => {
-                        setCurrentStep(2);
-                        setFormData({ ...formData, budget: "$15,000+" });
-                      }}
-                      className="flex rounded-xl hover:bg-black duration-200 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                      <h1 className="text-4xl">
-                        <ScrambleText
-                          textSize="text-1xl"
-                          text="$15,000+"
-                          Color="#fff"
-                          speed={25}
-                        />
-                      </h1>
-                    </div>
-                  </>
-                ) : (
-                  ""
-                )}
-              </div>
-            )}
+          
+            
 
-            {/* Step 2: Message Input */}
-            {currentStep === 2 && (
+            {/* Step 1: Message Input */}
+            {currentStep === 1 && (
               <div className="grid rounded grid-cols-[2fr_1px_1fr_1px_1fr_1px_1fr_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
                 <div className="flex rounded-xl hover:cursor-pointer items-center h-full">
                   <textarea
@@ -434,13 +215,12 @@ export default function Contact() {
                 </div>
                 <div className="bg-gray-400 opacity-30"></div>
                 <div
-                  onClick={() => setCurrentStep(3)}
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  onClick={() => setCurrentStep(2)}
+                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">
                     <ScrambleText
                       textSize="text-1xl"
-                      text={formData.message === "" ? "skip" : "Next"}
-                      Color="#fff"
+                      text={formData.message === "nothing" ? "skip" : "Next"}
                       speed={25}
                     />
                   </h1>
@@ -449,7 +229,7 @@ export default function Contact() {
             )}
 
             {/* Step 3: Email & Name Input and Submit */}
-            {currentStep === 3 && (
+            {currentStep === 2 && (
               <div className="grid rounded grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
                 <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80">
                   <label htmlFor="email">Email:</label>
