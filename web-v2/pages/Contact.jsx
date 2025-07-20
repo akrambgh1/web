@@ -80,7 +80,11 @@ export default function Contact() {
       scroll.destroy();
     };
   }, []);
-
+const emailRef = useRef(null);
+  const nameRef = useRef(null);
+ const focusInput = (ref) => {
+    ref.current?.focus();
+  };
   return (
     <>
       <section className="flex w-full justify-center bg-black/90" ref={containerRef}>
@@ -231,9 +235,10 @@ export default function Contact() {
             {/* Step 3: Email & Name Input and Submit */}
             {currentStep === 2 && (
               <div className="grid rounded grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
-                <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80">
+                <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80" onClick={() => focusInput(emailRef)}>
                   <label htmlFor="email">Email:</label>
                   <input
+                      ref={emailRef}
                     className="text-white resize-none outline-none border-none text-2xl w-full"
                     id="email"
                     name="email"
@@ -244,9 +249,10 @@ export default function Contact() {
                   />
                 </div>
                 <div className="bg-gray-400 opacity-30"></div>
-                <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80">
+                <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80"  onClick={() => focusInput(nameRef)}>
                   <label htmlFor="name">Name:</label>
                   <input
+                     ref={nameRef}
                     className="text-white resize-none outline-none border-none text-2xl w-full"
                     id="name"
                     name="name"
@@ -259,7 +265,7 @@ export default function Contact() {
                 <div className="bg-gray-400 opacity-30"></div>
                 <button
                   type="submit"
-                  className="flex rounded-xl hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
+                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
                   <h1 className="text-4xl">Submit</h1>
                 </button>
               </div>
