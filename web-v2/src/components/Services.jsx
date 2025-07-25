@@ -59,7 +59,7 @@ export default function ServicesSection() {
             className="sticky top-0 z-1 h-auto w-full overflow-visible"
           >
             <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-between transition-colors duration-300 max-md:gap-4 ${
+              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
                 activeSections[0] ? "bg-[#2264f1] text-white" : "bg-[#fff]"
               }`}
             >
@@ -78,7 +78,7 @@ export default function ServicesSection() {
 
               <div>
                 <img
-                  src="/landing.jpg"
+                  src="/coding-29.svg"
                   className="object-cover w-full h-[30vh] rounded-[5px]"
                 />
               </div>
@@ -91,25 +91,26 @@ export default function ServicesSection() {
             className="sticky top-[85px] z-1 h-auto w-full overflow-visible"
           >
             <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-between gap-4 transition-colors duration-300 max-md:gap-4 ${
+              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around gap-4 transition-colors duration-300 max-md:gap-4 ${
                 activeSections[85] ? "bg-[#3973f2] text-white" : "bg-[#fff]"
               }`}
             >
               <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
                 <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                  Brand Strategy
+                 Performance & Optimization
                 </h1>
+    
                 <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>Market Research</li>
-                  <li>Competitive Analysis</li>
-                  <li>Brand Positioning</li>
-                  <li>Messaging Framework</li>
+                  <li> Speed Optimization</li>
+                  <li>Code Splitting</li>
+                  <li>Asset Compression</li>
+                  
                 </ul>
               </div>
 
               <div>
                 <img
-                  src="/landing.jpg"
+                   src="/coding-1-29.svg"
                   className="object-cover w-full h-[30vh] rounded-[5px]"
                 />
               </div>
@@ -122,25 +123,27 @@ export default function ServicesSection() {
             className="sticky top-[170px] z-3 h-auto w-full overflow-visible"
           >
             <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-between transition-colors duration-300 max-md:gap-4 ${
+              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
                 activeSections[170] ? "bg-[#4f83f4] text-white" : "bg-[#fff]"
               }`}
             >
               <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
                 <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                  Visual Identity
+                  UI & Visual Design
                 </h1>
                 <ul className="grid grid-rows-3 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>Logo Design</li>
-                  <li>Typography</li>
-                  <li>Color Palette</li>
-                  <li>Imagery Guidelines</li>
+                  <li>Custom Web UI</li>
+                  <li>Responsive Layouts</li>
+                  <li>Design Systems</li>
+                  <li>Component Libraries</li>
+                  <li>Landing Page Design</li>
+
                 </ul>
               </div>
 
               <div>
                 <img
-                  src="/landing.jpg"
+                  src="/ui-design-90.svg"
                   className="object-cover w-full h-[30vh] rounded-[5px]"
                 />
               </div>
@@ -153,24 +156,24 @@ export default function ServicesSection() {
             className="sticky top-[255px] z-3 h-auto w-full overflow-visible"
           >
             <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-between transition-colors duration-300 max-md:gap-4 ${
+              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
                 activeSections[255] ? "bg-[#6592f5] text-white" : "bg-[#fff]"
               }`}
             >
               <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
                 <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                  SEO & Digital Marketing
+                  SEO & Integrations
                 </h1>
                 <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>On-page and off-page SEO</li>
-                  <li>Social media integration</li>
-                  <li>Email marketing setup</li>
+                  <li>On-page SEO setup</li>
+                  <li>SEO-friendly structure & tags</li>
+                  <li>Google Analytics integration</li>
                 </ul>
               </div>
 
               <div>
                 <img
-                  src="/landing.jpg"
+                  src="/search-engine-19.svg"
                   className="object-cover w-full h-[30vh] rounded-[5px]"
                 />
               </div>
@@ -182,7 +185,7 @@ export default function ServicesSection() {
             className="sticky top-[340px] z-3 h-auto w-full overflow-visible"
           >
             <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-between transition-colors duration-300 max-md:gap-4 ${
+              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
                 activeSections[340] ? "bg-[#91b1f8] text-white" : "bg-[#fff]"
               }`}
             >
@@ -199,7 +202,7 @@ export default function ServicesSection() {
 
               <div>
                 <img
-                  src="/landing.jpg"
+                  src="/data-center-2-69.svg"
                   className="object-cover w-full h-[30vh] rounded-[5px]"
                 />
               </div>
