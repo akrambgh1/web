@@ -2,7 +2,6 @@
 import Navbar from "../src/components/Navbar";
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useState, useEffect, useRef } from "react";
-
 import Footer from "@/components/Footer";
 import { easeInOut, motion, useScroll } from "framer-motion";
 import { useTransform } from "framer-motion";
@@ -11,7 +10,6 @@ import "locomotive-scroll/dist/locomotive-scroll.css";
 import { useNavigate } from "react-router-dom";
 import ServicesSection from "@/components/Services";
 import FAQ from "@/components/FAQ";
-
 import LandingPage from "@/components/LandingPage";
 
 export default function Home() {
@@ -59,7 +57,7 @@ export default function Home() {
     };
   }, []);
 
-  const scale = useTransform(scrollYProgress, [0.3, 0.7], ["1", "270"]);
+  const scale = useTransform(scrollYProgress, [0.3, 0.65], ["1", "380"]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -140,7 +138,7 @@ export default function Home() {
   return (
     <>
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 bg-[#1e1e1e] rounded-full pointer-events-none z-50 max-md:hidden mix-blend-difference"
+        className="fixed top-0 left-0 w-5 h-5 bg-[#1e1e1e] rounded-full pointer-events-none z-50 max-md:hidden mix-blend-difference"
         variants={variants}
         animate={cursorVarient}
         transition={{ type: "ease" }}
@@ -184,7 +182,7 @@ export default function Home() {
               </p>
               <p className="text-[.75rem]">
                 Let’s not create just for the sake of it. Let’s craft something
-                that’s as meaningful as it is memorable. At Studio by Miyagami,
+                that’s as meaningful as it is memorable. At Weblocators,
                 we don’t just design; we build legacies—bold and unforgettable.
               </p>
             </div>
@@ -223,7 +221,7 @@ export default function Home() {
 
               <p className="absolute bottom-[10%] right-[5%] w-[40%] font-[500] text-[#fff] text-[1.25rem] max-md:text-[.75rem] max-md:w-[90%]">
                 Let’s not create just for the sake of it. Let’s craft something
-                that’s as meaningful as it is memorable. At Studio by Miyagami,
+                that’s as meaningful as it is memorable. At Weblocators,
                 we don’t just design; we build legacies—bold and unforgettable.
               </p>
             </motion.div>

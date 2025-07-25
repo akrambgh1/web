@@ -52,7 +52,7 @@ const Navbar = () => {
       {/* Menu Button */}
       <div
         onClick={() => setIsActive(true)}
-        className={`flex w-[70%] max-md:w-[90%] p-1 duration-800 max-md:px-4 bg-[#1e1e1e] self-center items-center rounded-[30px] justify-between gap-3 cursor-pointer fixed px-8 top-[2%] z-45 select-none ${
+        className={`flex w-[70%] max-md:w-[90%] p-1 duration-800 max-md:px-4 bg-[#1e1e1e] self-center items-center rounded-[30px] justify-between gap-3 cursor-pointer fixed left-[50%] translate-x-[-50%] px-8 top-[2%] z-45 select-none ${
           !scrollingUp ? "translate-y-[-200%]" : "" 
         } `}>
         <h1
@@ -109,7 +109,7 @@ const Navbar = () => {
               </motion.li>
             </div>
 
-            <div   style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
+            {/* <div   style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
               <motion.li
                 onClick={() => navigate("/Work")}
                 initial={{ translateY: "200%" }}
@@ -124,7 +124,7 @@ const Navbar = () => {
               >
               <span> Work</span>
               </motion.li>
-            </div>
+            </div> */}
 
             <div  style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}>
               <motion.li
