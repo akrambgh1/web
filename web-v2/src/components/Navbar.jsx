@@ -3,6 +3,7 @@ import { useState, useEffect, useRef, use } from "react";
 import { Menu, X } from "lucide-react";
 import { easeIn, motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 const Navbar = () => {
   const [isActive, setIsActive] = useState(false);
   const [secondLayerExpanded, setSecondLayerExpanded] = useState(false);
@@ -51,29 +52,43 @@ const Navbar = () => {
 
       {/* Menu Button */}
       <div
-        onClick={() => setIsActive(true)}
+       
         className={`flex w-[70%] max-md:w-[90%] p-1 duration-800 max-md:px-4 bg-[#1e1e1e] self-center items-center rounded-[30px] justify-between gap-3 cursor-pointer fixed left-[50%] translate-x-[-50%] px-8 top-[2%] z-45 select-none ${
           !scrollingUp ? "translate-y-[-200%]" : "" 
         } `}>
-        <h1
+        <Link to="/"><h1
           className={`text-[2.25rem] font-[400] tracking-tighter transition-all max-md:text-[1.75rem] ease-in duration-300 ${
             isActive ? "text-[#e2e3e6] " : "text-[#fff]"
           }`}
         >
           Weblocators
-        </h1>
-        <div  className="flex flex-col p-3 gap-1 rounded-full">
-          <div
-            className={`w-[2rem] h-[1px] transition-all ease-in duration-300 ${
-              isActive ? "bg-[#fff]" : "bg-[#fff]"
-            }`}
-          ></div>
-          <div
-            className={`w-[1.5rem] self-end h-[1px] transition-all ease-in duration-300 ${
-              isActive ? "bg-[#fff]" : "bg-[#fff]"
-            }`}
-          ></div>
+        </h1></Link>
+        <div className="hidden lg:flex items-center gap-5">
+        <Link to="/"> <h2  className={`text-[1.5rem] font-[400] tracking-tighter transition-all max-md:text-[1.75rem] ease-in duration-300 ${
+            isActive ? "text-[#e2e3e6] " : "text-[#fff]"
+          }`}>Home</h2></Link>
+
+      <Link to="/About-us">    <h2  className={`text-[1.5rem] font-[400] tracking-tighter transition-all max-md:text-[1.75rem] ease-in duration-300 ${
+            isActive ? "text-[#e2e3e6] " : "text-[#fff]"
+          }`}>About us</h2></Link>
+   <Link to="/contact">      <h2  className={`text-[1.5rem] font-[400] tracking-tighter transition-all max-md:text-[1.75rem] ease-in duration-300 ${
+            isActive ? "text-[#e2e3e6] " : "text-[#fff]"
+          }`}>Contact</h2></Link>
+
         </div>
+        <div className="flex flex-col p-3 gap-1 rounded-full block lg:hidden">
+  <div
+    className={`w-[2rem] h-[1px] transition-all ease-in duration-300 ${
+      isActive ? "bg-[#fff]" : "bg-[#fff]"
+    }`}
+  ></div>
+  <div
+    className={`w-[1.5rem] self-end h-[1px] transition-all ease-in duration-300 ${
+      isActive ? "bg-[#fff]" : "bg-[#fff]"
+    }`}
+  ></div>
+</div>
+
       </div>
 
       {/* Sidebar Menu */}

@@ -56,7 +56,7 @@ export default function AboutUs() {
         data-scroll-container
         className="w-full bg-white"
       >
-        <div className="leading-[1.04] h-[80dvh] flex items-center justify-center flex-col relative max-md:h-[40vh]">
+        <div className="leading-[1.04] h-[100dvh] flex items-center justify-center flex-col relative max-md:h-[40vh]">
           <motion.div
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
             className="flex w-auto"
