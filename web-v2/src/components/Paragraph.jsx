@@ -7,14 +7,14 @@ export default function Paragraph({paragraph}) {
   const container = useRef(null);
   const { scrollYProgress } = useScroll({
     target: container,
-    offset: ["start 0.5", "start 0.20"]
+    offset: ["start 0.4", "start 0.20"]
   })
 
   const words = paragraph.split(" ")
   return (
     <p 
       ref={container}         
-      className="flex text-[2.5rem] max-md:text-[1rem] items-center tracking-tighter p-[40px] max-w-[100%] flex-wrap"
+      className="flex text-[2.5rem] max-md:text-[1rem] justify-center text-center tracking-tighter p-[40px] max-w-[100%] flex-wrap"
     >
     {
       words.map( (word, i) => {
@@ -31,7 +31,7 @@ const Word = ({children, progress, range}) => {
   const amount = range[1] - range[0]
   const step = amount / children.length
   return (
-    <span className= "relative mr-[7px] text-black items-center font-[500] mt-[2px] leading-tight">
+    <span className= "relative mr-[7px] text-black items-center text-center font-[500] mt-[2px] leading-tight">
       {
         children.split("").map((char, i) => {
           const start = range[0] + (i * step);
@@ -47,7 +47,7 @@ const Char = ({children, progress, range}) => {
   const opacity = useTransform(progress, range, [0,1])
   return (
     <span>
-      <span className= "absolute opacity-[20%] text-center leading-tight font-[500]">{children}</span>
+      <span className= "absolute opacity-[20%] leading-tight font-[500] text-center">{children}</span>
       <motion.span style={{opacity: opacity}}>{children}</motion.span>
     </span>
   )

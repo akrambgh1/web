@@ -16,7 +16,8 @@ export default function App() {
             position="top-center"
             reverseOrder={false}
             toastOptions={{ duration: 2000 }}
-          />
+      />
+      
       <Routes>
 
         <Route path="/" element={<Home />} />

@@ -56,7 +56,7 @@ export default function AboutUs() {
         data-scroll-container
         className="w-full bg-white"
       >
-        <div className="leading-[1.04] h-[100dvh] flex items-center justify-center flex-col relative max-md:h-[40vh]">
+        {/* <div className="leading-[1.04] h-[100dvh] flex items-center justify-center flex-col relative max-md:h-[40vh]">
           <motion.div
             style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
             className="flex w-auto"
@@ -92,19 +92,87 @@ export default function AboutUs() {
             transition={{ duration: 0.5 }}
             className="absolute translate-x-[-50%] left-[50%] bottom-[5rem] animate-bounceDown text-[5rem] max-md:text-[2rem]"
           />
-        </div>
+        </div> */}
 
-        <div className="w-full h-[80vh] flex gap-16 leading-tight justify-evenly max-xl:flex-col max-xl:h-fit">
-          <div className="w-[50%] max-xl:w-full max-xl:items-center max-xl:text-center">
+        {/* <div className="w-full h-[50vh] flex gap-16 leading-tight justify-evenly max-xl:flex-col max-xl:h-fit">
+          <div className="w-[50%] text-center max-xl:w-full max-xl:items-center max-xl:text-center">
             <Paragraph
               paragraph={
                 "We're a team of developers, and creative thinkers driven by one simple goal to help businesses grow online. Whether you're launching a new brand or refreshing an existing one, we craft digital experiences that make an impact."
               }
             ></Paragraph>
           </div>
+        </div> */}
+
+        <div className="h-[100dvh] w-full flex flex-col gap-8 items-center p-20 max-md:p-4 mb-[5rem]">
+          <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
+            <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/1.jpg')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
+                Who we are
+              </p>
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[1.15rem] w-[80%]">
+                We’re a focused team of designers, developers, and strategists
+                who believe good design is about more than just looking good
+                it’s about creating experiences that work, endure, and connect.
+                We stay small to stay sharp. No fluff, no filler. Just people
+                who care deeply about the work.
+              </p>
+            </div>
+
+            <div className="w-[40%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/2.jpg')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
+                Beyond the Work
+              </p>
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[1.15rem] w-[80%]">
+                We’re curious by nature always learning, always refining our
+                craft. Outside of client projects, we explore, experiment, and
+                stay current with the tools and technologies shaping tomorrow’s
+                web.
+              </p>
+            </div>
+          </div>
+
+          <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
+            <div className="w-[40%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/3.jpg')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
+                How We Work
+              </p>
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[1.15rem] w-[85%]">
+                Our process is collaborative, transparent, and purpose-driven.
+                We don’t disappear into a black box and come back with a
+                “reveal.” Instead, we work with you step by step, idea by idea
+               to build something meaningful and useful. We ask questions, we
+                listen hard, and we design with intent.
+              </p>
+            </div>
+
+            <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/4.jpg')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+              <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
+                Our Philosophy
+              </p>
+              <ol className="text-[#ffffff] font-[500] tracking-tighter text-[1.15rem] w-[80%]">
+                <li>
+                  Partnership over service. We’re not just a vendor we’re your
+                  creative partner.
+                </li>
+                <li>
+                  Less but better. Every detail has a purpose. Nothing is
+                  ornamental.
+                </li>
+                <li>
+                  People-first design. We design for real people with real
+                  needs.
+                </li>
+                <li>
+                  Iteration beats assumption. We refine through collaboration,
+                  not guesswork.
+                </li>
+              </ol>
+            </div>
+          </div>
         </div>
 
-        <section className="h-[100vh] flex flex-col items-end max-xl:h-fit">
+        <section className="h-[100vh] flex flex-col items-end max-xl:h-fit mt-[5rem]">
           <div className="flex flex-col gap-4 w-[100%]">
             <h1 className="text-[1.5rem] font-[500] tracking-tighter ml-[2.5rem]">
               What we promise!
@@ -116,7 +184,7 @@ export default function AboutUs() {
                   <span className="text-black uppercase font-[500]">
                     Small team, sharp minds.
                   </span>{" "}
-                  We stay compact by design — senior thinkers, no filler. Every
+                  We stay compact by design senior thinkers, no filler. Every
                   project gets our full attention, from the first sketch to
                   final delivery.
                 </h1>
@@ -131,7 +199,7 @@ export default function AboutUs() {
                   <span className="text-black uppercase font-[500]">
                     Built on trust.
                   </span>{" "}
-                  We stay compact by design — senior thinkers, no filler. Every
+                  We stay compact by design senior thinkers, no filler. Every
                   project gets our full attention, from the first sketch to
                   final delivery.
                 </h1>
@@ -146,7 +214,7 @@ export default function AboutUs() {
                     Depth over flash
                   </span>{" "}
                   We chase meaning, not just aesthetics. Great design is
-                  substance dressed well — strategic, thoughtful, and never
+                  substance dressed well strategic, thoughtful, and never
                   superficial.
                 </h1>
                 <h1 className="absolute bottom-8 left-8 text-[2rem] text-[#9ea2ae]">
