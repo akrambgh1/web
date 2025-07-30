@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-
+import Navbar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
 import Contact from "../pages/Contact";
 import axios from "axios";
@@ -9,7 +9,8 @@ import AboutUs from "../pages/about-us";
 axios.defaults.baseURL =import.meta.env.VITE_API_URL;
 // Ensure the environment variable is properly accessed
 export default function App() {
-  return (
+  return (<>
+      <Navbar></Navbar>
     <Router>
 
       <Toaster
@@ -27,6 +28,6 @@ export default function App() {
        
 
       </Routes>
-    </Router>
+    </Router></>
   );
 }
