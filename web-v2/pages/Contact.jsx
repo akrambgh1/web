@@ -88,7 +88,6 @@ const emailRef = useRef(null);
   return (
     <>
       <section className="flex w-full justify-center bg-black/90" ref={containerRef}>
-        <Navbar />
         <form onSubmit={handleSubmit}>
           <div className="grid p-4 h-screen w-screen gap-x-[0.52rem] gap-y-[0.52rem] grid-rows-[1fr_1px_1fr_1px_1fr] grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] auto-cols-fr">
             {/* Header Area */}

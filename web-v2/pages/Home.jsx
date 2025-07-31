@@ -167,7 +167,6 @@ export default function Home() {
         </motion.div>
 
         <section className="flex flex-col max-md:gap-[0rem] relative gap-[2rem] z-49">
-          <Navbar></Navbar>
 
           <LandingPage></LandingPage>
 

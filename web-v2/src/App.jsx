@@ -9,8 +9,9 @@ import AboutUs from "../pages/about-us";
 axios.defaults.baseURL =import.meta.env.VITE_API_URL;
 // Ensure the environment variable is properly accessed
 export default function App() {
-  return (<>
-      <Navbar></Navbar>
+  return (
+  <>
+      {/* <Navbar></Navbar> */}
     <Router>
 
       <Toaster
