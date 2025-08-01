@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export default function LandingPage() {
   return (
     <>
@@ -44,9 +45,10 @@ export default function LandingPage() {
               creating digital experiences that captivate and deliver real
               impact.
             </p>
+            <Link to="/contact">
             <button className="bg-[#fff] text-[#1e1e1e] mt-[2rem] w-fit px-8 py-2 rounded-[7px] cursor-pointer">
               Contact Us
-            </button>
+            </button></Link>
           </div>
           
         </div>

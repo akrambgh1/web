@@ -7,11 +7,14 @@
   font-family: InterVariable;
   src: url(/src/assets/fonts/InterVariable.woff2) format("woff2");
 }
-
+:root {
+  --vh: 1vh;
+};
 body {
   font-family: "InterVariable", sans-serif;
   color: black;
   overflow: auto;
+  overflow-x: hidden;
   height: 100dvh;
 }
 
