@@ -1,7 +1,7 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/(?!.*\\.(js|css|png|jpg|svg|woff2?|ttf|map)$).+", "destination": "/" }
+    { "source": "/:path*", "destination": "/" }
   ],
   "headers": [
     {
@@ -26,10 +26,6 @@
         {
           "key": "Cross-Origin-Opener-Policy",
           "value": "same-origin"
-        },
-        {
-          "key": "X-Powered-By",
-          "value": "Vercel"
         }
       ]
     }
