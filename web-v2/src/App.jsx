@@ -1,15 +1,15 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Home from "../pages/Home";
+import Home from "./pages/Home";
 // import Navbar from "./components/Navbar";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
 
 // Import your pages
-import Contact from "../pages/Contact";
-import AkramCV from "../pages/profile-akram";
-import AboutUs from "../pages/about-us";
-import NotFound from "../pages/notFound";
+import Contact from "./pages/Contact";
+import AkramCV from "./pages/profile-akram";
+import AboutUs from "./pages/about-us";
+import NotFound from "./pages/notFound";
 
 
 // ✅ Set axios base URL from Vite environment variable
