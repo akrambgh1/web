@@ -1,7 +1,7 @@
 {
   "version": 2,
   "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+    { "source": "/(?!.*\\.(js|css|png|jpg|svg|woff2?|ttf|map)$).+", "destination": "/" }
   ],
   "headers": [
     {
@@ -9,7 +9,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self' https://weblocators.com https://weblocators.vercel.app; img-src * data:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; font-src 'self' data:"
+          "value": "default-src 'self'; img-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src *; frame-ancestors 'none';"
         },
         {
           "key": "X-Frame-Options",
