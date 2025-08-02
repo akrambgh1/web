@@ -11,6 +11,8 @@ import { useNavigate } from "react-router-dom";
 import ServicesSection from "@/components/Services";
 import FAQ from "@/components/FAQ";
 import LandingPage from "@/components/LandingPage";
+import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   const [Current, SetCurrent] = useState(0);
@@ -137,6 +139,28 @@ export default function Home() {
 
   return (
     <>
+       <Helmet>
+        <title>Weblocators | Professional Website Creation & Digital Solutions</title>
+        <meta
+          name="description"
+          content="Weblocators is a modern web agency providing professional website creation and global digital services. We help businesses build their online presence."
+        />
+        <meta
+          name="keywords"
+          content="website creation, web development, digital solutions, Weblocators, professional web agency"
+        />
+        <meta name="author" content="Weblocators" />
+        <link rel="canonical" href="https://www.weblocators.com/" />
+        <meta property="og:title" content="Weblocators | Website Creation & Digital Solutions" />
+        <meta
+          property="og:description"
+          content="Professional website creation agency delivering modern digital solutions worldwide. Contact us today to grow your online presence."
+        />
+        <meta property="og:url" content="https://www.weblocators.com/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Weblocators" />
+      </Helmet>
+      <main>
       <motion.div
         className="fixed top-0 left-0 w-5 h-5 bg-[#1e1e1e] rounded-full pointer-events-none z-50 max-md:hidden mix-blend-difference"
         variants={variants}
@@ -238,7 +262,7 @@ export default function Home() {
             <Footer></Footer>
           </section>
         </section>
-      </section>
+      </section></main>
     </>
   );
 }

@@ -17,6 +17,7 @@ import Card from "@/components/Card";
 import Paragraph from "@/components/Paragraph";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import { Helmet } from 'react-helmet';
 
 export default function AboutUs() {
   const ref = useRef();
@@ -50,7 +51,11 @@ export default function AboutUs() {
 
   return (
     <>
-     
+     <Helmet>
+        <title>About Weblocators | Professional Web Agency</title>
+        <meta name="description" content="Learn about Weblocators — a modern web agency offering design, development, and digital strategy. Meet the team behind our success." />
+      </Helmet>
+      <main>
       <section
         ref={containerRef}
         data-scroll-container
@@ -245,7 +250,7 @@ export default function AboutUs() {
         >
           <Footer></Footer>
         </section>
-      </section>
+      </section></main>
     </>
   );
 }

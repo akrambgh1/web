@@ -8,7 +8,7 @@ import { MoveLeft } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import { Helmet } from "react-helmet";
 
 
 export default function Contact() {
@@ -86,7 +86,17 @@ const emailRef = useRef(null);
     ref.current?.focus();
   };
   return (
-    <>
+    <><Helmet>
+        <title>Contact Weblocators | Get in Touch</title>
+        <meta
+          name="description"
+          content="Get in touch with Weblocators — contact us for web development services and digital solutions. Reach out by email or follow us on social media."
+      />
+        <meta name="keywords" content="contact, web development, digital solutions, Weblocators" />
+        <meta name="author" content="Weblocators" />
+      <link rel="canonical" href="https://www.weblocators.com/contact" />
+    </Helmet>
+      <main>
       <section className="flex  min-h-[100svh] w-full justify-center bg-black overflow-y-auto" ref={containerRef} style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
   <form onSubmit={handleSubmit} className="w-full">
     <div className="grid md:p-4 p-2 md:gap-4 gap-1 h-full w-full  md:grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] grid-rows-[25vh_1fr] md:grid-rows-[1fr_1fr]  ">
@@ -253,7 +263,7 @@ const emailRef = useRef(null);
       )}
     </div>
   </form>
-</section>
+</section></main>
 
     </>
   );
