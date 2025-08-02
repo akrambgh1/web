@@ -74,7 +74,7 @@ export default function ServicesSection() {
               <img
                 src="/coding-29.svg"
                 alt="Illustration of website development services"
-                className="object-cover w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+                className="object-cover md:w-full w-[75%] h-[25vh] md:h-[30vh] rounded-[5px] "
               />
             </div></div>
           </motion.div>
@@ -101,7 +101,7 @@ export default function ServicesSection() {
               <img
                 src="/coding-1-29.svg"
                 alt="Performance and optimization illustration"
-                className="object-cover w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+                className="object-cover md:w-full w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
               />
             </div></div>
           </motion.div>
@@ -130,7 +130,7 @@ export default function ServicesSection() {
               <img
                 src="/ui-design-90.svg"
                 alt="UI and visual design services illustration"
-                className="object-cover w-[75%]  md:h-[30vh] rounded-[5px]"
+                className="object-cover md:w-full w-[75%]  md:h-[30vh] rounded-[5px]"
               />
             </div></div>
           </motion.div>
@@ -158,7 +158,7 @@ export default function ServicesSection() {
               <img
                 src="/search-engine-19.svg"
                 alt="SEO and integration illustration"
-                className="object-cover w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+                className="object-cover md:w-full w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
               /></div>
             </div>
           </motion.div>
@@ -186,7 +186,7 @@ export default function ServicesSection() {
               <img
                 src="/data-center-2-69.svg"
                 alt="Hosting and website maintenance illustration"
-                className="object-cover  w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+                className="object-cover md:w-full w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
               />
             </div></div>
           </motion.div>
