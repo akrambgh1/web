@@ -14,22 +14,30 @@ export default function Footer() {
         </div>
         <div className="flex gap-4 w-[100%] max-md:grid max-md:grid-cols-2 max-md:gap-4">
           <div className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
-            <img src="/instagram.png" />
+            <a href="https://www.instagram.com/weblocators" target="_blank" rel="noopener noreferrer">
+  <img src="/instagram.png" alt="Weblocators on Instagram" />
+</a>
+           
           </div>
           <div className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
-            <img src="/twitter.png" />
+            <a href="https://twitter.com/weblocators" target="_blank" rel="noopener noreferrer" className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
+        <img src="/twitter.png" alt="Twitter" />
+      </a>
           </div>
           <div className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
-            <img src="/linkedin.png" />
+            <a href="https://www.linkedin.com/company/weblocators" target="_blank" rel="noopener noreferrer" className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
+        <img src="/linkedin.png" alt="LinkedIn" /> </a>
           </div>
           <div className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
-            <img src="/dribble.png" />
+             <a href="https://dribbble.com/weblocators" target="_blank" rel="noopener noreferrer" className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
+        <img src="/dribble.png" alt="Dribbble" />
+      </a>
           </div>
         </div>
 
         <div className="w-full flex gap-4 rounded-[15px] max-md:flex-col">
           <div className="w-[40%] max-md:w-full max-md:h-[40vh] h-[20vh] bg-[#2163f1] rounded-[10px] flex items-center justify-center p-8">
-            <img src="/Weblocators2.png" />
+            <img src="/Weblocators2.png" alt="Weblocators Logo" />
           </div>
           <div className="w-[60%] h-[20vh] rounded-[15px] px-5 relative flex flex-col justify-evenly max-md:w-full bg-[#2163f1] max-md:h-auto max-md:rounded-[5px] max-md:p-4 ">
             <div className="flex items-center justify-evenly gap-4 list-none pt-2 max-md:flex max-md:w-full max-md:justify-center max-md:p-0 text-2xl text-white">
