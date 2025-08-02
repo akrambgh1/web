@@ -9,7 +9,8 @@ import axios from "axios";
 import Contact from "../pages/Contact";
 import AkramCV from "../pages/profile-akram";
 import AboutUs from "../pages/about-us";
-import NotFound from "../pages/NotFound";
+import NotFound from "../pages/notFound";
+
 
 // ✅ Set axios base URL from Vite environment variable
 axios.defaults.baseURL = import.meta.env.VITE_API_URL;
