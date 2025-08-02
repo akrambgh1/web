@@ -1,17 +1,14 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
-  ],
   "redirects": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "has": [
         {
           "type": "host",
           "value": "weblocators.com"
         }
       ],
-      "destination": "https://www.weblocators.com",
+      "destination": "https://www.weblocators.com/:1",
       "permanent": true
     }
   ],
@@ -21,7 +18,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
+          "value": "default-src 'self'; img-src *; script-src 'self'; style-src 'self' 'unsafe-inline'"
         },
         {
           "key": "X-Frame-Options",
@@ -38,6 +35,10 @@
         {
           "key": "Cross-Origin-Opener-Policy",
           "value": "same-origin"
+        },
+        {
+          "key": "X-Powered-By",
+          "value": "Vercel"
         }
       ]
     }
