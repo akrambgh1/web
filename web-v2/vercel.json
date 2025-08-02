@@ -8,7 +8,7 @@
           "value": "weblocators.com"
         }
       ],
-      "destination": "https://www.weblocators.com/$1",
+      "destination": "https://www.weblocators.com/:path*",
       "permanent": true
     }
   ],
