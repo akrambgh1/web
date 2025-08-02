@@ -2,16 +2,7 @@
   "redirects": [
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "weblocators.com"
-        }
-      ],
-      "destination": "https://www.weblocators.com/:path*",
-      "permanent": true
-    }
-  ],
+
   "headers": [
     {
       "source": "/(.*)",
