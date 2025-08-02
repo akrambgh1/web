@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import Navbar from "../src/components/Navbar";
+
 import WhyChooseUs from "@/components/WhyChooseUs";
 import { useState, useEffect, useRef } from "react";
 import Footer from "@/components/Footer";

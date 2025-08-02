@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useRef } from "react";
-import Navbar from "@/components/Navbar";
+
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
-import ScrambleText from "../src/components/ScrambleText";
+import ScrambleText from "../components/ScrambleText";
 import { MoveLeft } from "lucide-react";
 import { toast } from "react-hot-toast";
 import { useNavigate } from "react-router-dom";
