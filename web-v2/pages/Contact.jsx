@@ -87,191 +87,174 @@ const emailRef = useRef(null);
   };
   return (
     <>
-      <section className="flex w-full justify-center bg-black/90" ref={containerRef}>
-        <form onSubmit={handleSubmit}>
-          <div className="grid p-4 h-screen w-screen gap-x-[0.52rem] gap-y-[0.52rem] grid-rows-[1fr_1px_1fr_1px_1fr] grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] auto-cols-fr">
-            {/* Header Area */}
-            <div className="rounded bg-blue-800 col-start-1 row-start-1 row-end-4 col-end-10 flex-col flex items-start justify-end gap-10 p-10">
-              {currentStep !== 0 && (
-                <button
-                  type="button"
-                  onClick={() => setCurrentStep(currentStep - 1)}
-                  className="flex items-center gap-2 cursor-pointer bg-gray-800 text-white font-bold py-2 px-4 rounded-2xl">
-                  <MoveLeft color="#fff" />
-                  <ScrambleText
-                    textSize="text-1xl"
-                    text="Back"
-                    Color="#fff"
-                    speed={45}
-                  />
-                </button>
-              )}
-
-              <h1 className="text-5xl font-bold">
-                <ScrambleText
-                  textSize="text-6xl"
-                  Color="#fff"
-                  text={
-                    currentStep === 0
-                      ? "Hello there!"
-                      
-                      : currentStep === 1
-                      ? "A brief overview"
-                      : ""
-                  }
-                  speed={35}
-                />
-                <br />
-                <ScrambleText
-                  Color="#fff"
-                  textSize="text-6xl"
-                  text={
-                    currentStep === 0
-                      ? "Choose how we can help you"
-                     
-                      : currentStep === 1
-                      ? "of your project"
-                      : currentStep === 2
-                      ? "How can we address you?"
-                      : ""
-                  }
-                  speed={25}
-                />
-              </h1>
-            </div>
-
-            {/* Step 0: Choose Type */}
-            {currentStep === 0 && (
-              <div className="grid rounded grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
-                <div
-                  onClick={() => {
-                    setCurrentStep(1);
-                    setType("Custom website");
-                    setFormData({ ...formData, type: "Custom website" });
-                  }}
-                  className="flex rounded-xl hover:bg-white duration-300 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">Custom website</h1>
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
-
-                <div
-                  onClick={() => {
-                    setCurrentStep(1);
-                    setType("Custom Shop");
-                    setFormData({ ...formData, type: "Custom Shop" });
-                  }}
-                  className="flex rounded-xl hover:bg-white duration-300 text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">Custom Shop</h1>
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
-
-                <div
-                  onClick={() => {
-                    setCurrentStep(1);
-                    setType("website remake");
-                    setFormData({ ...formData, type: "website remake" });
-                  }}
-                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">website remake</h1>
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
-
-                <div
-                  onClick={() => {
-                    setCurrentStep(1);
-                    setType("landing page");
-                    setFormData({ ...formData, type: "landing page" });
-                  }}
-                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">landing page</h1>
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
-
-                <div
-                  onClick={() => {
-                    setCurrentStep(1);
-                    setType("complex web app");
-                    setFormData({ ...formData, type: "complex web app" });
-                  }}
-                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">complex web app</h1>
-                </div>
-              </div>
-            )}
-
+      <section className="flex  min-h-[100svh] w-full justify-center bg-black overflow-y-auto" ref={containerRef} style={{ height: 'calc(var(--vh, 1vh) * 100)' }}>
+  <form onSubmit={handleSubmit} className="w-full">
+    <div className="grid md:p-4 p-2 md:gap-4 gap-1 h-full w-full  md:grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] grid-rows-[25vh_1fr] md:grid-rows-[1fr_1fr]  ">
+      {/* Header Area */}
+      <div className="rounded bg-[url('/7.webp')] bg-center bg-cover col-span-full md:col-start-1 md:col-end-10  row-start-1  row-end-2 flex flex-col items-start justify-end p-6 h-[25vh] md:h-[30vh] lg:h-[65vh]
+">
+              <div className=" md:h-[40%] flex flex-col items-start  ">
+                {currentStep == 0 && (
           
-            
-
-            {/* Step 1: Message Input */}
-            {currentStep === 1 && (
-              <div className="grid rounded grid-cols-[2fr_1px_1fr_1px_1fr_1px_1fr_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
-                <div className="flex rounded-xl hover:cursor-pointer items-center h-full">
-                  <textarea
-                    className="text-white resize-none outline-none border-none h-full text-3xl w-full"
-                    id="message"
-                    placeholder="Example: I want a website for my business..."
-                    name="message"
-                    maxLength="330"
-                    value={formData.message}
-                    onChange={handleChange}
-                  />
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
-                <div
-                  onClick={() => setCurrentStep(2)}
-                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">
-                    <ScrambleText
-                      textSize="text-1xl"
-                      text={formData.message === "nothing" ? "skip" : "Next"}
-                      speed={25}
-                    />
-                  </h1>
-                </div>
-              </div>
-            )}
-
-            {/* Step 3: Email & Name Input and Submit */}
-            {currentStep === 2 && (
-              <div className="grid rounded grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] gap-x-[0.52rem] gap-y-[0.52rem] auto-cols-fr row-span-2 col-span-9">
-                <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80" onClick={() => focusInput(emailRef)}>
-                  <label htmlFor="email">Email:</label>
-                  <input
-                      ref={emailRef}
-                    className="text-white resize-none outline-none border-none text-2xl w-full"
-                    id="email"
-                    name="email"
-                    type="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
-                <div className="flex flex-col rounded-xl p-4 text-white hover:cursor-pointer items-start justify-end h-full bg-gray-80"  onClick={() => focusInput(nameRef)}>
-                  <label htmlFor="name">Name:</label>
-                  <input
-                     ref={nameRef}
-                    className="text-white resize-none outline-none border-none text-2xl w-full"
-                    id="name"
-                    name="name"
-                    type="text"
-                    value={formData.name}
-                    onChange={handleChange}
-                    required
-                  />
-                </div>
-                <div className="bg-gray-400 opacity-30"></div>
                 <button
-                  type="submit"
-                  className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-gray-800">
-                  <h1 className="text-4xl">Submit</h1>
-                </button>
+            type="button"
+           
+            className="flex items-center w-auto bg-trasparent  md:py-5 px-4 rounded-2xl"
+          >
+           
+          </button>
+        )}
+        {currentStep !== 0 && (
+          
+                <button
+            type="button"
+            onClick={() => setCurrentStep(currentStep - 1)}
+            className="flex items-center gap-2 cursor-pointer w-auto bg-gray-800 text-white font-bold py-2 px-4 rounded-2xl"
+          >
+            <MoveLeft color="#fff" />
+            <ScrambleText textSize="text-1xl" text="Back" Color="#fff" speed={45} />
+          </button>
+        )}
+          
+        <h1 className="text-3xl h-[50%] md:text-5xl font-bold">
+          <ScrambleText
+            textSize="text-xl md:text-6xl"
+            Color="#fff"
+            text={
+              currentStep === 0
+                ? 'Hello there!'
+                : currentStep === 1
+                ? 'A brief overview'
+                : ''
+            }
+            speed={35}
+          />
+          <br />
+          <ScrambleText
+            Color="#fff"
+            textSize="text-xl md:text-6xl"
+            text={
+              currentStep === 0
+                ? 'Choose how we can help you'
+                : currentStep === 1
+                ? 'of your project'
+                : currentStep === 2
+                ? 'How can we address you?'
+                : ''
+            }
+            speed={25}
+          />
+                </h1>
               </div>
-            )}
+            </div>
+   
+
+      {/* Step 0: Choose Type */}
+      {currentStep === 0 && (
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr]   gap-0 md:gap-2 col-span-full md:col-span-9">
+          {[
+            'Custom website',
+            'Custom Shop',
+            'website remake',
+            'landing page',
+            'complex web app',
+          ].map((label, i) => (
+            <React.Fragment key={label}>
+              <div
+                onClick={() => {
+                  setCurrentStep(1)
+                  setType(label)
+                  setFormData({ ...formData, type: label })
+                }}
+                className="flex rounded-xl hover:bg-white duration-300 text-white hover:cursor-pointer hover:text-black items-center justify-center h-20  md:h-full bg-[#1e1e1e] text-2xl md:text-4xl text-center"
+              >
+                {label}
+              </div>
+              {i !== 4 && <div className="bg-gray-400 opacity-30 hidden md:block"></div>}
+            </React.Fragment>
+          ))}
+        </div>
+      )}
+
+      {/* Step 1: Message Input */}
+      {currentStep === 1 && (
+        <div className="grid grid-cols-1 md:grid-cols-[2fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr]   gap-0 md:gap-2 col-span-full md:col-span-9">
+          <div className="flex rounded-xl hover:cursor-pointer md:h-full justify-start items-start md:items-center ">
+            <textarea
+              className="text-white text-xl md:text-3xl resize-none outline-none border-none h-20 md:h-full w-full bg-transparent"
+              id="message"
+              placeholder="Example: I want a website for my business..."
+              name="message"
+              maxLength="340"
+              value={formData.message}
+              onChange={handleChange}
+            />
           </div>
-        </form>
-      </section>
+          <div className="bg-gray-400 opacity-30 hidden md:block"></div>
+          <div
+            onClick={() => setCurrentStep(2)}
+            className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-[#1e1e1e]"
+          >
+            <h1 className="text-2xl md:text-4xl">
+              <ScrambleText
+                textSize="text-1xl"
+                text={formData.message === '' ? 'skip' : 'Next'}
+                speed={25}
+              /></h1>
+            
+          </div>
+        </div>
+      )}
+
+      {/* Step 2: Email & Name Input and Submit */}
+      {currentStep === 2 && (
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] gap-2 col-span-full md:col-span-9">
+          <div
+            className="flex flex-col rounded-xl  text-white hover:cursor-pointer items-start justify-start md:justify-end h-30 md:h-full"
+            onClick={() => focusInput(emailRef)}
+          >
+            <label htmlFor="email">Email:</label>
+            <input
+              ref={emailRef}
+              className="bg-transparent text-white text-xl md:text-2xl w-full outline-none"
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="bg-gray-400 opacity-30 hidden md:block"></div>
+          <div
+            className="flex flex-col rounded-xl  text-white hover:cursor-pointer items-start justify-start md:justify-end h-40 md:h-full"
+            onClick={() => focusInput(nameRef)}
+          >
+            <label htmlFor="name">Name:</label>
+            <input
+              ref={nameRef}
+              className="bg-transparent text-white text-xl md:text-2xl w-full outline-none"
+              id="name"
+              name="name"
+              type="text"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          <div className="bg-gray-400 opacity-30 hidden md:block"></div>
+          <button
+            type="submit"
+            className="flex rounded-xl duration-300 hover:bg-white text-white hover:cursor-pointer hover:text-black items-center justify-center h-full bg-[#1e1e1e]"
+          >
+            <h1 className="text-2xl md:text-4xl">Submit</h1>
+          </button>
+        </div>
+      )}
+    </div>
+  </form>
+</section>
+
     </>
   );
 }
