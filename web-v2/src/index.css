@@ -13,6 +13,7 @@ body {
   color: black;
   overflow: auto;
   height: 100dvh;
+  position: relative;
 }
 
 @theme inline {

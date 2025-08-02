@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "../pages/Home";
-import Navbar from "./components/Navbar";
+// import Navbar from "./components/Navbar";
 import { Toaster } from "react-hot-toast";
 import Contact from "../pages/Contact";
 import axios from "axios";

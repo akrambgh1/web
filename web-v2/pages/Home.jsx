@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import ServicesSection from "@/components/Services";
 import FAQ from "@/components/FAQ";
 import LandingPage from "@/components/LandingPage";
+import ContactSection from "./ContactSection";
 
 export default function Home() {
   const [Current, SetCurrent] = useState(0);
@@ -57,7 +58,7 @@ export default function Home() {
     };
   }, []);
 
-  const scale = useTransform(scrollYProgress, [0.3, 0.65], ["1", "380"]);
+  const scale = useTransform(scrollYProgress, [0.3, 0.65], ["1", "280"]);
 
   useEffect(() => {
     const handleMouseMove = (e) => {
@@ -161,7 +162,7 @@ export default function Home() {
             ease: [0.77, 0, 0.175, 1],
             delay: 0.5,
           }}
-          className="fixed top-0 left-0 w-screen h-screen bg-blue-600 z-[90] flex items-center justify-center overflow-hidden"
+          className="fixed top-0 left-0 w-screen h-screen bg-blue-600 z-[99990] flex items-center justify-center overflow-hidden"
         >
           <h1 className="text-white text-[7rem] max-md:text-[4rem] tracking-tighter">Weblocators</h1>
         </motion.div>
@@ -177,12 +178,12 @@ export default function Home() {
               <div className="w-[13rem] h-[13rem] absolute top-[-55%] left-[-5%] bg-[#2163f1] blur-[4rem] opacity-200 z-[-1]"></div>
 
               <p className="text-[1.25rem] font-[400] tracking-tighter w-full flex gap-4">
-                Crafting high-performing websites that drive success for you
+                Crafting high performing websites that drive success for you
               </p>
               <p className="text-[.75rem]">
                 Let’s not create just for the sake of it. Let’s craft something
                 that’s as meaningful as it is memorable. At Weblocators,
-                we don’t just design; we build legacies—bold and unforgettable.
+                we don’t just design , we build legacies, bold and unforgettable.
               </p>
             </div>
           </section>
@@ -214,21 +215,23 @@ export default function Home() {
                 viewport={{ amount: 0.9 }}
                 transition={{ ease: easeInOut, duration: 0.5 }}
               >
-                Crafting high-performing websites that drive success whenever
+                Crafting high performing websites that drive success whenever
                 and however you need them.
               </motion.h1>
 
               <p className="absolute bottom-[10%] right-[5%] w-[40%] font-[500] text-[#fff] text-[1.25rem] max-md:text-[.75rem] max-md:w-[90%]">
                 Let’s not create just for the sake of it. Let’s craft something
                 that’s as meaningful as it is memorable. At Weblocators,
-                we don’t just design; we build legacies—bold and unforgettable.
+                we don’t just design, we build legacies, bold and unforgettable.
               </p>
             </motion.div>
           </section>
 
           <ServicesSection></ServicesSection>
+          
 
           <FAQ></FAQ>
+          <ContactSection></ContactSection>
 
           <section
             className="relative h-[70dvh] max-md:h-[100vh] mt-[5rem]"
