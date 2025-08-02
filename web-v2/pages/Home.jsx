@@ -11,7 +11,6 @@ import { useNavigate } from "react-router-dom";
 import ServicesSection from "@/components/Services";
 import FAQ from "@/components/FAQ";
 import LandingPage from "@/components/LandingPage";
-import ContactSection from "./ContactSection";
 
 export default function Home() {
   const [Current, SetCurrent] = useState(0);
@@ -231,7 +230,6 @@ export default function Home() {
           
 
           <FAQ></FAQ>
-          <ContactSection></ContactSection>
 
           <section
             className="relative h-[70dvh] max-md:h-[100vh] mt-[5rem]"
