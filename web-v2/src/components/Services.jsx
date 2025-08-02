@@ -23,8 +23,6 @@ export default function ServicesSection() {
 
       stickyElements.forEach((el) => {
         const topValue = el.getBoundingClientRect().top;
-
-        // Check for close values (within ±5px)
         Object.keys(newActiveSections).forEach((key) => {
           if (Math.abs(topValue - parseInt(key)) <= 5) {
             newActiveSections[key] = true;
@@ -42,174 +40,158 @@ export default function ServicesSection() {
   }, []);
 
   return (
-    <>
-      <section
-        className="relative min-h-[180vh] mt-[10rem] max-md:min-h-[320vh] max-md:mt-[2rem]"
-        style={{
-          clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
-        }}
-      >
-        <section className="h-[212vh] w-[100%] absolute z-50 flex flex-col max-md:h-[400vh]">
-          <h1 className="text-[2rem] tracking-tighter text-[#2264f1] sm:text-[3rem] w-[100%] shrink-0 mb-[3rem] md:mb-[4rem] px-[15rem] max-2xl:px-[3rem] max-md:px-4">
-            [Our services]
-          </h1>
-          {/* Section 1 */}
-          <div
-            data-sticky
-            className="sticky top-0 z-1 h-auto w-full overflow-visible"
+    <section
+      className="relative min-h-[180vh] mt-[10rem] max-md:min-h-[320vh] max-md:mt-[2rem]"
+      style={{
+        clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)",
+      }}
+    >
+      <section className="h-[212vh] w-[100%] absolute z-50 flex flex-col max-md:h-[400vh]">
+        <h1 className="text-[2rem] tracking-tighter text-[#2264f1] sm:text-[3rem] w-[100%] shrink-0 mb-[3rem] md:mb-[4rem] px-[15rem] max-2xl:px-[3rem] max-md:px-4">
+          [Our services]
+        </h1>
+
+        {/* Section 1 */}
+        <div data-sticky className="sticky top-0 z-1 h-auto w-full overflow-visible">
+          <motion.div
+            className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
+              activeSections[0] ? "bg-[#2264f1] text-white" : "bg-[#fff]"
+            }`}
           >
-            <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
-                activeSections[0] ? "bg-[#2264f1] text-white" : "bg-[#fff]"
-              }`}
-            >
-              <div className="flex flex-col w-[70%] h-full gap-[2rem] max-md:w-full ">
-                <h1 className="text-[2rem] font-[400] max-md:text-[1.75rem]">
-                  Website Development
-                </h1>
-                <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>Business Websites</li>
-                  <li>Frontend and backend development</li>
-                  <li>E-commerce Solutions</li>
-                  <li>Portfolio & Personal Websites</li>
-                  <li>Web Applications</li>
-                </ul>
-              </div>
+            <div className="flex flex-col w-[70%] h-full gap-[2rem] max-md:w-full">
+              <h1 className="text-[2rem] font-[400] max-md:text-[1.75rem]">
+                Website Development
+              </h1>
+              <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
+                <li>Business Websites</li>
+                <li>Frontend and backend development</li>
+                <li>E-commerce Solutions</li>
+                <li>Portfolio & Personal Websites</li>
+                <li>Web Applications</li>
+              </ul>
+            </div><div>
+              <div className="flex justify-center w-full md:h-[30vh] rounded-[5px] overflow-hidden">
+              <img
+                src="/coding-29.svg"
+                alt="Illustration of website development services"
+                className="object-cover w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+              />
+            </div></div>
+          </motion.div>
+        </div>
 
-              <div>
-                <img
-                  src="/coding-29.svg"
-                  className="object-cover w-full h-[30vh] rounded-[5px]"
-                />
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Section 2 */}
-          <div
-            data-sticky
-            className="sticky top-[85px] z-1 h-auto w-full overflow-visible"
+        {/* Section 2 */}
+        <div data-sticky className="sticky top-[85px] z-1 h-auto w-full overflow-visible">
+          <motion.div
+            className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around gap-4 transition-colors duration-300 max-md:gap-4 ${
+              activeSections[85] ? "bg-[#3973f2] text-white" : "bg-[#fff]"
+            }`}
           >
-            <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around gap-4 transition-colors duration-300 max-md:gap-4 ${
-                activeSections[85] ? "bg-[#3973f2] text-white" : "bg-[#fff]"
-              }`}
-            >
-              <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
-                <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                 Performance & Optimization
-                </h1>
-    
-                <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li> Speed Optimization</li>
-                  <li>Code Splitting</li>
-                  <li>Asset Compression</li>
-                  
-                </ul>
-              </div>
+            <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
+              <h1 className="text-[2rem] max-md:text-[1.75rem]">
+                Performance & Optimization
+              </h1>
+              <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
+                <li>Speed Optimization</li>
+                <li>Code Splitting</li>
+                <li>Asset Compression</li>
+              </ul>
+            </div><div>
+              <div className="flex justify-center w-full  md:h-[30vh] rounded-[5px] overflow-hidden">
+              <img
+                src="/coding-1-29.svg"
+                alt="Performance and optimization illustration"
+                className="object-cover w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+              />
+            </div></div>
+          </motion.div>
+        </div>
 
-              <div>
-                <img
-                   src="/coding-1-29.svg"
-                  className="object-cover w-full h-[30vh] rounded-[5px]"
-                />
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Section 3 */}
-          <div
-            data-sticky
-            className="sticky top-[170px] z-3 h-auto w-full overflow-visible"
+        {/* Section 3 */}
+        <div data-sticky className="sticky top-[170px] z-3 h-auto w-full overflow-visible">
+          <motion.div
+            className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
+              activeSections[170] ? "bg-[#4f83f4] text-white" : "bg-[#fff]"
+            }`}
           >
-            <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
-                activeSections[170] ? "bg-[#4f83f4] text-white" : "bg-[#fff]"
-              }`}
-            >
-              <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
-                <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                  UI & Visual Design
-                </h1>
-                <ul className="grid grid-rows-3 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>Custom Web UI</li>
-                  <li>Responsive Layouts</li>
-                  <li>Design Systems</li>
-                  <li>Component Libraries</li>
-                  <li>Landing Page Design</li>
+            <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
+              <h1 className="text-[2rem] max-md:text-[1.75rem]">
+                UI & Visual Design
+              </h1>
+              <ul className="grid grid-rows-3 max-md:flex max-md:flex-col gap-2 tracking-tighter">
+                <li>Custom Web UI</li>
+                <li>Responsive Layouts</li>
+                <li>Design Systems</li>
+                <li>Component Libraries</li>
+                <li>Landing Page Design</li>
+              </ul>
+            </div><div>
+              <div className="flex justify-center w-full md:h-[30vh] rounded-[5px] overflow-hidden">
+              <img
+                src="/ui-design-90.svg"
+                alt="UI and visual design services illustration"
+                className="object-cover w-[75%]  md:h-[30vh] rounded-[5px]"
+              />
+            </div></div>
+          </motion.div>
+        </div>
 
-                </ul>
-              </div>
-
-              <div>
-                <img
-                  src="/ui-design-90.svg"
-                  className="object-cover w-full h-[30vh] rounded-[5px]"
-                />
-              </div>
-            </motion.div>
-          </div>
-
-          {/* Section 4 */}
-          <div
-            data-sticky
-            className="sticky top-[255px] z-3 h-auto w-full overflow-visible"
+        {/* Section 4 */}
+        <div data-sticky className="sticky top-[255px] z-3 h-auto w-full overflow-visible">
+          <motion.div
+            className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
+              activeSections[255] ? "bg-[#6592f5] text-white" : "bg-[#fff]"
+            }`}
           >
-            <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
-                activeSections[255] ? "bg-[#6592f5] text-white" : "bg-[#fff]"
-              }`}
-            >
-              <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
-                <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                  SEO & Integrations
-                </h1>
-                <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>On-page SEO setup</li>
-                  <li>SEO-friendly structure & tags</li>
-                  <li>Google Analytics integration</li>
-                </ul>
-              </div>
+            <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
+              <h1 className="text-[2rem] max-md:text-[1.75rem]">
+                SEO & Integrations
+              </h1>
+              <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
+                <li>On-page SEO setup</li>
+                <li>SEO-friendly structure & tags</li>
+                <li>Google Analytics integration</li>
+              </ul>
+            </div>
+            <div>
+                <div className="flex justify-center items-center w-full  md:h-[30vh] rounded-[5px] overflow-hidden">
+              <img
+                src="/search-engine-19.svg"
+                alt="SEO and integration illustration"
+                className="object-cover w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+              /></div>
+            </div>
+          </motion.div>
+        </div>
 
-              <div>
-                <img
-                  src="/search-engine-19.svg"
-                  className="object-cover w-full h-[30vh] rounded-[5px]"
-                />
-              </div>
-            </motion.div>
-          </div>
-
-          <div
-            data-sticky
-            className="sticky top-[340px] z-3 h-auto w-full overflow-visible"
+        {/* Section 5 */}
+        <div data-sticky className="sticky top-[340px] z-3 h-auto w-full overflow-visible">
+          <motion.div
+            className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-center md:justify-around transition-colors duration-300 max-md:gap-4 ${
+              activeSections[340] ? "bg-[#91b1f8] text-white" : "bg-[#fff]"
+            }`}
           >
-            <motion.div
-              className={`flex py-4 px-[15rem] max-2xl:px-[3rem] max-md:px-4 max-md:flex-col justify-around transition-colors duration-300 max-md:gap-4 ${
-                activeSections[340] ? "bg-[#91b1f8] text-white" : "bg-[#fff]"
-              }`}
-            >
-              <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
-                <h1 className="text-[2rem] max-md:text-[1.75rem]">
-                  Hosting & Maintenance
-                </h1>
-                <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
-                  <li>Web hosting setup</li>
-                  <li>Ongoing maintenance and support</li>
-                  <li>Security updates and backups</li>
-                </ul>
-              </div>
-
-              <div>
-                <img
-                  src="/data-center-2-69.svg"
-                  className="object-cover w-full h-[30vh] rounded-[5px]"
-                />
-              </div>
-            </motion.div>
-          </div>
-        </section>
+            <div className="flex flex-col w-[70%] max-md:w-full h-full gap-[2rem]">
+              <h1 className="text-[2rem] max-md:text-[1.75rem]">
+                Hosting & Maintenance
+              </h1>
+              <ul className="grid grid-rows-4 max-md:flex max-md:flex-col gap-2 tracking-tighter">
+                <li>Web hosting setup</li>
+                <li>Ongoing maintenance and support</li>
+                <li>Security updates and backups</li>
+              </ul>
+            </div>
+            <div>
+              <div className="flex justify-center w-full  md:h-[30vh] rounded-[5px] overflow-hidden">
+              <img
+                src="/data-center-2-69.svg"
+                alt="Hosting and website maintenance illustration"
+                className="object-cover  w-[75%] h-[25vh] md:h-[30vh] rounded-[5px]"
+              />
+            </div></div>
+          </motion.div>
+        </div>
       </section>
-    </>
+    </section>
   );
 }
