@@ -52,7 +52,7 @@ export default function LandingPage() {
           </div>
           
         </div>
-        <div className="h-full w-[50%] bg-[url('/5.jpg')] bg-center bg-cover rounded-[25px]"></div>
+        <div className="h-full w-[50%] bg-[url('/5.webp')] bg-center bg-cover rounded-[25px]"></div>
       </div>
     </>
   );

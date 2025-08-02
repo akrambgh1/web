@@ -91,7 +91,7 @@ const emailRef = useRef(null);
   <form onSubmit={handleSubmit} className="w-full">
     <div className="grid md:p-4 p-2 md:gap-4 gap-1 h-full w-full  md:grid-cols-[1fr_1px_1fr_1px_1fr_1px_1fr_1px_1fr] grid-rows-[25vh_1fr] md:grid-rows-[1fr_1fr]  ">
       {/* Header Area */}
-      <div className="rounded bg-[url('/7.jpg')] bg-center bg-cover col-span-full md:col-start-1 md:col-end-10  row-start-1  row-end-2 flex flex-col items-start justify-end p-6 h-[25vh] md:h-[30vh] lg:h-[65vh]
+      <div className="rounded bg-[url('/7.webp')] bg-center bg-cover col-span-full md:col-start-1 md:col-end-10  row-start-1  row-end-2 flex flex-col items-start justify-end p-6 h-[25vh] md:h-[30vh] lg:h-[65vh]
 ">
               <div className=" md:h-[40%] flex flex-col items-start  ">
                 {currentStep == 0 && (
