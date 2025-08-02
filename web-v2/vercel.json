@@ -32,10 +32,6 @@
           "value": "text/html; charset=utf-8"
         },
         {
-          "key": "Content-Encoding",
-          "value": "gzip"
-        },
-        {
           "key": "X-Powered-By",
           "value": "Vercel"
         }
