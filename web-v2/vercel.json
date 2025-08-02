@@ -1,7 +1,19 @@
 {
-  "version": 2,
   "rewrites": [
-    { "source": "/:path*", "destination": "/" }
+    { "source": "/(.*)", "destination": "/" }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "weblocators.com"
+        }
+      ],
+      "destination": "https://www.weblocators.com",
+      "permanent": true
+    }
   ],
   "headers": [
     {
@@ -9,7 +21,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-          "value": "default-src 'self'; img-src *; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://vercel.live https://*.vercel.app; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src *; frame-ancestors 'none';"
+          "value": "default-src 'self'; img-src *; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';"
         },
         {
           "key": "X-Frame-Options",
