@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://weblocators.com/sitemap.xml
