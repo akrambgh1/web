@@ -1,15 +1,9 @@
+
 {
-  "redirects": [
+  "rewrites": [
     {
       "source": "/(.*)",
-      "has": [
-        {
-          "type": "host",
-          "value": "weblocators.com"
-        }
-      ],
-      "destination": "https://www.weblocators.com/:path*",
-      "permanent": true
+      "destination": "/index.html"
     }
   ],
   "headers": [
@@ -18,11 +12,7 @@
       "headers": [
         {
           "key": "Content-Security-Policy",
-                  "value": "default-src 'self'; script-src 'self' 'unsafe-inline' data: https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src * data:"
-        },
-        {
-          "key": "X-Frame-Options",
-          "value": "DENY"
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' data: https://vercel.live; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src * data:"
         },
         {
           "key": "Strict-Transport-Security",
@@ -33,13 +23,10 @@
           "value": "nosniff"
         },
         {
-          "key": "Cross-Origin-Opener-Policy",
-          "value": "same-origin"
+          "key": "X-Frame-Options",
+          "value": "DENY"
         }
       ]
     }
   ]
 }
-
-
-
