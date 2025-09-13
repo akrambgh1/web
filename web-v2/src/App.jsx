@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
-// import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar";
 import { useEffect } from "react";
 import { Toaster } from "react-hot-toast";
 import axios from "axios";
@@ -10,6 +10,8 @@ import Contact from "./pages/Contact";
 import AkramCV from "./pages/profile-akram";
 import AboutUs from "./pages/about-us";
 import NotFound from "./pages/notfound";
+import PrivacyPolicy from "./pages/policy";
+import TermsConditions from "./pages/TermsConditions";
 
 
 // ✅ Set axios base URL from Vite environment variable
@@ -27,10 +29,15 @@ export default function App() {
     window.addEventListener('resize', setVH);
     return () => window.removeEventListener('resize', setVH);
   }, []);
-
+ useEffect(() => {
+    document.documentElement.classList.add("dark"); // 👈 this enables dark mode
+  }, []);
   return (
     <>
-     <Helmet>
+      <main className="relative">
+    
+     
+      <Router> <Helmet>
       <script type="application/ld+json">
         {`
         {
@@ -54,8 +61,7 @@ export default function App() {
         }
         `}
       </script>
-    </Helmet>
-      <Router>
+      </Helmet> <Navbar />
         {/* ✅ Global Toaster (notifications) */}
         <Toaster
           position="top-center"
@@ -70,8 +76,11 @@ export default function App() {
           <Route path="/Benghezal-akram" element={<AkramCV />} />
           <Route path="/About-us" element={<AboutUs />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy/>} />
+        <Route path="/terms-and-conditions" element={<TermsConditions />} />
+      
         </Routes>
-      </Router>
+      </Router></main>
     </>
   );
 }

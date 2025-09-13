@@ -13,6 +13,7 @@ import FAQ from "@/components/FAQ";
 import LandingPage from "@/components/LandingPage";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import Pricing from "./Pricing";
 
 export default function Home() {
   const [Current, SetCurrent] = useState(0);
@@ -250,8 +251,9 @@ export default function Home() {
             </motion.div>
           </section>
 
-          <ServicesSection></ServicesSection>
-          
+            <ServicesSection></ServicesSection>
+            
+         
 
           <FAQ></FAQ>
 

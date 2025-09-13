@@ -3,31 +3,24 @@ import {
   useScroll,
   useTransform,
   motion,
-  useMotionValueEvent,
-  easeIn,
-  easeInOut,
 } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
 import LocomotiveScroll from "locomotive-scroll";
 import "locomotive-scroll/dist/locomotive-scroll.css";
-import { Polygon } from "coolshapes-react";
+
 import { RiArrowDownDoubleLine } from "react-icons/ri";
-import { Target } from "lucide-react";
-import Card from "@/components/Card";
-import Paragraph from "@/components/Paragraph";
-import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Helmet } from 'react-helmet';
+import { Helmet } from "react-helmet";
 
 export default function AboutUs() {
-  const ref = useRef();
-  const refContainer = useRef();
-  const someRef = useRef();
+  // ✅ use one ref for both LocomotiveScroll and useScroll
+  const containerRef = useRef(null);
+
   const [height, setHeight] = useState(0);
 
-  const containerRef = useRef(null);
   const MotionArrowDown = motion(RiArrowDownDoubleLine);
 
+  // ✅ initialize LocomotiveScroll
   useEffect(() => {
     if (!containerRef.current) return;
 
@@ -44,71 +37,32 @@ export default function AboutUs() {
     };
   }, []);
 
+  // ✅ useScroll now targets the same ref attached to the DOM
   const { scrollYProgress } = useScroll({
-    target: refContainer,
+    target: containerRef,
   });
+
+  // Example transform (you can use it on any motion.div)
   const X = useTransform(scrollYProgress, [0, 1], ["20%", "-55%"]);
 
   return (
     <>
-     <Helmet>
+      <Helmet>
         <title>About Weblocators | Professional Web Agency</title>
-        <meta name="description" content="Learn about Weblocators — a modern web agency offering design, development, and digital strategy. Meet the team behind our success." />
+        <meta
+          name="description"
+          content="Learn about Weblocators — a modern web agency offering design, development, and digital strategy. Meet the team behind our success."
+        />
       </Helmet>
-      <main>
+
+      {/* attach containerRef here */}
       <section
         ref={containerRef}
         data-scroll-container
-        className="w-full bg-white"
+        className="w-full bg-white z-99999999999"
       >
-        {/* <div className="leading-[1.04] h-[100dvh] flex items-center justify-center flex-col relative max-md:h-[40vh]">
-          <motion.div
-            style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-            className="flex w-auto"
-          >
-            <motion.h1
-              initial={{ translateY: "100%", rotate: 7 }}
-              animate={{ translateY: "0", rotate: 0 }}
-              transition={{ ease: easeInOut, duration: 0.75 }}
-              viewport={{ amount: 0, once: true }}
-              className="text-[9rem] font-[500] tracking-tighter max-md:text-[3rem]"
-            >
-              Learn more
-            </motion.h1>
-          </motion.div>
-          <motion.div
-            style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
-            className="flex w-auto mt-[-2%]"
-          >
-            <motion.h1
-              initial={{ translateY: "100%", rotate: 7 }}
-              animate={{ translateY: "0", rotate: 0 }}
-              transition={{ ease: easeInOut, duration: 0.75, delay: ".2" }}
-              viewport={{ amount: 0, once: true }}
-              className="text-[9rem] font-[500] tracking-tighter max-md:text-[3rem]"
-            >
-              about us
-            </motion.h1>
-          </motion.div>
-
-          <MotionArrowDown
-            initial={{ opacity: 0, translateY: "100%" }}
-            animate={{ opacity: 1, translateY: "0%" }}
-            transition={{ duration: 0.5 }}
-            className="absolute translate-x-[-50%] left-[50%] bottom-[5rem] animate-bounceDown text-[5rem] max-md:text-[2rem]"
-          />
-        </div> */}
-
-        {/* <div className="w-full h-[50vh] flex gap-16 leading-tight justify-evenly max-xl:flex-col max-xl:h-fit">
-          <div className="w-[50%] text-center max-xl:w-full max-xl:items-center max-xl:text-center">
-            <Paragraph
-              paragraph={
-                "We're a team of developers, and creative thinkers driven by one simple goal to help businesses grow online. Whether you're launching a new brand or refreshing an existing one, we craft digital experiences that make an impact."
-              }
-            ></Paragraph>
-          </div>
-        </div> */}
-
+        {/* example animated element with scroll */}
+        
         <div className="h-[100dvh] w-full flex flex-col gap-8 items-center p-20 max-md:p-4 mb-[5rem]">
           <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
             <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/6.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
@@ -146,7 +100,7 @@ export default function AboutUs() {
                 Our process is collaborative, transparent, and purpose-driven.
                 We don’t disappear into a black box and come back with a
                 “reveal.” Instead, we work with you step by step, idea by idea
-               to build something meaningful and useful. We ask questions, we
+                to build something meaningful and useful. We ask questions, we
                 listen hard, and we design with intent.
               </p>
             </div>
@@ -248,9 +202,9 @@ export default function AboutUs() {
           className="relative h-[70dvh] max-md:h-[100vh] mt-[5rem]"
           style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
         >
-          <Footer></Footer>
+          <Footer />
         </section>
-      </section></main>
+      </section>
     </>
   );
 }

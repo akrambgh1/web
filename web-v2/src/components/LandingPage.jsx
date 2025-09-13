@@ -27,7 +27,7 @@ export default function LandingPage() {
 <div className="min-h-[100svh] grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 p-4 md:p-8">
   {/* Div 1: Title */}
   <div className="order-1 md:col-start-1 md:row-start-1 flex items-center justify-center">
-    <h1 className="text-[2.25rem] md:text-[4rem] lg:text-[6rem] font-[500] tracking-tighter text-[#1e1e1e] uppercase">
+    <h1 className="text-[2.25rem] md:text-[4rem] lg:text-[6rem] select-none font-[500] tracking-tighter text-[#1e1e1e] uppercase">
       Weblocators
     </h1>
   </div>
