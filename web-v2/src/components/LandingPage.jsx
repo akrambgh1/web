@@ -26,14 +26,14 @@ export default function LandingPage() {
       </div> */}
 <div className="min-h-[100svh] grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 p-4 md:p-8">
   {/* Div 1: Title */}
-  <div className="order-1 md:col-start-1 md:row-start-1 flex items-center justify-center">
-    <h1 className="text-[2.25rem] md:text-[4rem] lg:text-[6rem] select-none font-[500] tracking-tighter text-[#1e1e1e] uppercase">
+  <div className="md:col-start-1 hidden md:row-start-1 md:flex items-center justify-center">
+    <h1 className="text-[2.25rem]  md:text-[4rem] lg:text-[6rem] select-none font-[500] tracking-tighter text-[#1e1e1e] uppercase">
       Weblocators
     </h1>
   </div>
 
   {/* Div 2: Card */}
-  <div className="order-3 md:col-start-1 md:row-start-2 bg-[#1e1e1e] text-white rounded-2xl p-8 flex flex-col justify-end gap-4 border-[2px] relative">
+  <div className="order-2  md:h-full md:col-start-1 md:row-start-2 bg-[#1e1e1e] text-white rounded-2xl p-8 flex flex-col justify-end gap-4 border-[2px] relative">
     {/* Top Bar */}
     <div className="absolute w-full top-0 left-0 p-4 flex justify-between items-center">
       <div className="flex items-center gap-2">
@@ -60,7 +60,11 @@ export default function LandingPage() {
   </div>
 
   {/* Div 3: Image */}
-  <div className="order-2 md:col-start-2 md:row-span-2 h-[200px] md:h-full bg-[url('/5.webp')] bg-center bg-cover rounded-[25px]"></div>
+        <div className="order-1 p-8  flex items-end justify-center md:col-start-2 md:row-span-2  md:h-full bg-[url('/5.webp')] bg-center bg-cover rounded-[25px]">
+            <h1 className="text-[2.25rem] md:hidden select-none font-[500] tracking-tighter text-white uppercase">
+      Weblocators
+    </h1>
+        </div>
 </div>
 
 

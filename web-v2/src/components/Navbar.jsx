@@ -1,14 +1,64 @@
 
 import { RiMenu3Fill } from "react-icons/ri";
 import { useState } from "react";
-import { FaInstagram, FaDribbble, FaLinkedin, FaTwitter } from "react-icons/fa";
-import { RiHome9Fill } from "react-icons/ri";
+import {  FaDribbble, FaLinkedin,  } from "react-icons/fa";
+import { Instagram } from 'lucide-react';
+import { House } from 'lucide-react';
 import { AiOutlineExclamationCircle } from "react-icons/ai";
 import { RiContactsLine } from "react-icons/ri";
-
+import { createLucideIcon } from "lucide-react";
 export default function Navbar() {
   const [IsActive, SetIsActive] = useState(false);
 
+  
+
+
+const XIcon = createLucideIcon("X", [
+  [
+    "path",
+    {
+      d: "M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z",
+      stroke: "none",
+      fill: "currentColor",
+    },
+  ],
+]);
+  function isMobile() {
+  return /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+}
+
+function openProfile(platform, e) {
+  let appLink, webLink;
+ e.preventDefault();
+  if (platform === 'instagram') {
+    // Instagram
+    const username = 'weblocators';
+    appLink = `instagram://user?username=${username}`;
+    webLink = `https://www.instagram.com/${username}/`;
+  } else if (platform === 'twitter') {
+    // Twitter/X
+    const username = 'weblocators';
+    appLink = `twitter://user?screen_name=${username}`;
+    webLink = `https://x.com/${username}`;
+  } else if (platform === 'linkedin') {
+    // LinkedIn (company)
+    const companySlug = 'weblocators';
+    appLink = `https://www.linkedin.com/company/${companySlug}`;
+    webLink = appLink;
+  }
+
+  if (isMobile()) {
+    window.location = appLink;
+    // fallback to web after 500ms if app not installed
+    setTimeout(() => {
+      window.location = webLink;
+    }, 500);
+  } else {
+    window.location = webLink;
+  }
+}
+
+      
   return (
     <>
       <div className="flex flex-col fixed top-[5%] left-[2%] gap-4 w-fit z-[9997]">
@@ -31,7 +81,7 @@ export default function Navbar() {
           <div className="flex flex-col gap-0.5 bg-[#fff] p-4 rounded-[10px]">
             <h1 className="tracking-tighter px-2 mb-3">Navigation</h1>
             <div className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-200 transition-all hover:text-[#fff] rounded-[.5rem]">
-              <RiHome9Fill className="hover:text-[#fff]" />
+              <House  aclassName="hover:text-[#fff]" />
               <h1 className="tracking-tighter">Home</h1>
             </div>
 
@@ -46,20 +96,20 @@ export default function Navbar() {
           </div>
           <ul className="flex flex-col gap-0.5 bg-[#fff] p-4 rounded-[10px]">
             <h1 className="tracking-tighter px-2 mb-3">Socials</h1>
-            <div className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
-              <FaInstagram className="hover:text-[#fff]" />
+            <div onClick={(e)=> openProfile('instagram', e)} className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
+              <Instagram className="hover:text-[#fff]" />
               <h1 className="tracking-tighter">Instagram</h1>
             </div>
             <div className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
               <FaDribbble className="hover:text-[#fff]" />
               <h1 className="tracking-tighter">Dribble</h1>
             </div>
-            <div className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
+            <div onClick={(e)=> openProfile('linkedin', e)} className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
               <FaLinkedin className="hover:text-[#fff]" />
               <h1 className="tracking-tighter">Linkedin</h1>
             </div>
-            <div className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
-              <FaTwitter className="hover:text-[#fff]" />
+            <div onClick={(e)=> openProfile('twitter', e)} className="flex gap-4 items-center cursor-pointer py-2 px-2 hover:bg-[#2264f1] duration-300 transition-all hover:text-[#fff] rounded-[.5rem]">
+              <XIcon  className="hover:text-[#fff]" />
               <h1 className="tracking-tighter">Twitter</h1>
             </div>
           </ul>

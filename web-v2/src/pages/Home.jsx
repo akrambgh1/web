@@ -13,8 +13,8 @@ import FAQ from "@/components/FAQ";
 import LandingPage from "@/components/LandingPage";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import Pricing from "./Pricing";
 
+import Pricing from "@/components/Pricing";
 export default function Home() {
   const [Current, SetCurrent] = useState(0);
   const { scrollYProgress } = useScroll();
@@ -249,8 +249,9 @@ export default function Home() {
                 we don’t just design, we build legacies, bold and unforgettable.
               </p>
             </motion.div>
-          </section>
-
+            </section>
+       
+<Pricing></Pricing>
             <ServicesSection></ServicesSection>
             
          
