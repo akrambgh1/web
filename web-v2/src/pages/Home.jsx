@@ -162,12 +162,12 @@ export default function Home() {
         <meta property="og:site_name" content="Weblocators" />
       </Helmet>
       <main>
-      <motion.div
+      {/* <motion.div
         className="fixed top-0 left-0 w-5 h-5 bg-[#1e1e1e] rounded-full pointer-events-none z-50 max-md:hidden mix-blend-difference"
         variants={variants}
         animate={cursorVarient}
         transition={{ type: "ease" }}
-      />
+      /> */}
 
       <section
         data-scroll-container

@@ -1,70 +1,48 @@
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
+import { ArrowDown } from "lucide-react";
+import { ArrowRight } from "lucide-react";
+
 export default function LandingPage() {
   return (
     <>
-      {/* <div className="h-[100dvh] p-8">
-        <div className="grid  grid-cols-5 grid-rows-6 gap-0  w-full relative h-full rounded-[25px] flex-col items-center justify-center">
-          <div className=" col-span-2 row-span-3 z-0 col-start-4 row-start-4  h-full rounded-bl-4xl rounded-tr-4xl rounded-br-4xl bg-[#2264f1] p-8 flex flex-col gap-4"></div>
-          <div className=" col-span-2  z-40 row-span-3  col-start-4 row-start-4  bg-white h-full  rounded-2xl p-8 flex flex-col gap-4">
-            <h1 className="text-[3rem] font-[500] tracking-tighter w-[90%]">
-              Transforming ideas into impactful digital experiences.
-            </h1>
-            <p className="text-[#9ea2ae] text-[1.5rem] w-[80%] tracking-tighter">
-              We bring ideas to life with elegant design and smart technology,
-              creating digital experiences that captivate and deliver real
-              impact.
-            </p>
-            <button className="bg-[#1e1e1e] text-white mt-[2rem] w-fit px-8 py-2 rounded-[7px] cursor-pointer">
-              Contact Us
-            </button>
+      <section className="w-full h-screen max-md:h-[60vh] max-lg:h-[90vh] max-lg:mb-[2rem]">
+        <div className="w-full h-full relative items-center justify-center">
+          <div className="relative w-full h-full flex items-center justify-start bg-black overflow-hidden">
+            <div className="flex flex-col gap-4 h-full max-2xl:w-[100%] max-md:w-full lg:w-[50%] px-10">
+              <div className="flex flex-col h-full justify-center z-10 gap-4 max-md:gap-2 text-white tracking-tighter max-lg:items-center max-lg:text-center">
+                <h1 className="text-[4.5rem] max-md:text-[1.75rem] max-xl:text-[3rem]">
+                  Bring your ideas to life with{" "}
+                  <i className="bg-lime-300 px-4 text-black font-[500]">WEBLOCATORS</i>
+                </h1>
+                <p className="max-md:text-[.75rem] text-[1.5rem] text-[#bdbfc7] max-md:text-[#e7e7e7]">
+                  We bring ideas to life with elegant design and smart
+                  technology, creating digital experiences that captivate and
+                  deliver real impact.
+                </p>
+                {/* <h1 className="bg-[#ffffff] flex items-center gap-4 text-black cursor-pointer w-fit p-4 text-[1.25rem] px-4 py-2 mt-3 max-md:text-[1rem] rounded-[4px] group">
+                  
+                  contatus@weblocators.com
+                  <ArrowRight className="group-hover:rotate-45 rotate-45"></ArrowRight>
+                </h1> */}
+              </div>
+            </div>
+            <div className="absolute md:bottom-10 md:right-8 bottom-0 right-4 flex items-center z-10 gap-2">
+              <h1 className="tracking-tighter text-[2rem] max-md:text-[1rem]">
+                Scroll down
+              </h1>
+              <ArrowDown className="border-2 border-black rounded-full animate-bounce"></ArrowDown>
+            </div>
+
+            <div className="absolute bottom-[-50%] left-[50%] translate-x-[-50%] w-[125%] max-lg:w-[200%] h-[75%] max-md:h-[85%] rounded-[140%] bg-white blur-3xl z-4 opacity-100"></div>
+
+            <div className="absolute bottom-[-50%] left-[50%] translate-x-[-50%] max-lg:w-[170%] w-full h-[95%] max-md:h-[100%] rounded-[140%] bg-indigo-400 blur-3xl z-3 opacity-60"></div>
+
+            <div className="absolute bottom-[-50%] left-[50%] translate-x-[-50%] max-lg:w-[170%] w-full h-[105%] max-md:h-[120%] rounded-[140%] bg-[#2264f1] blur-3xl z-2 opacity-40"></div>
+
+            <div className="absolute bottom-[-50%] left-[50%] translate-x-[-50%] max-lg:w-[170%] w-full h-[120%] max-md:h-[130%] rounded-[140%] bg-[#0f0063] blur-3xl opacity-60 z-1"></div>
           </div>
-          <div className="col-span-3 row-span-3 rounded-tl-2xl h-full bg-[#2264f1] "></div>
-          <div className="col-span-2 row-span-3 h-full col-start-4 rounded-br-2xl rounded-tr-2xl bg-[#2264f1]"></div>
-
-          <div className="col-span-3 row-span-3 col-start-1 rounded-bl-2xl rounded-br-2xl  row-start-4 bg-[#2264f1] h-full"></div>
         </div>
-      </div> */}
-<div className="min-h-[100svh] grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 p-4 md:p-8">
-  {/* Div 1: Title */}
-  <div className="order-1 md:col-start-1 md:row-start-1 flex items-center justify-center">
-    <h1 className="text-[2.25rem] md:text-[4rem] lg:text-[6rem] select-none font-[500] tracking-tighter text-[#1e1e1e] uppercase">
-      Weblocators
-    </h1>
-  </div>
-
-  {/* Div 2: Card */}
-  <div className="order-3 md:col-start-1 md:row-start-2 bg-[#1e1e1e] text-white rounded-2xl p-8 flex flex-col justify-end gap-4 border-[2px] relative">
-    {/* Top Bar */}
-    <div className="absolute w-full top-0 left-0 p-4 flex justify-between items-center">
-      <div className="flex items-center gap-2">
-        <div className="w-2 h-2 rounded-full bg-white"></div>
-        <h1 className="tracking-tighter font-[500]">Welcome</h1>
-      </div>
-      <h1>We build websites</h1>
-    </div>
-
-    {/* Main Text */}
-    <h1 className="text-[1.25rem] md:text-[3rem] font-[500] tracking-tighter mt-16">
-      Transforming ideas into impactful digital experiences.
-    </h1>
-    <p className="text-[#9ea2ae] text-[1.25rem] md:text-[1.5rem] tracking-tighter w-full md:w-[80%]">
-      We bring ideas to life with elegant design and smart technology, creating digital experiences that captivate and deliver real impact.
-    </p>
-
-    {/* Button */}
-    <Link to="/contact">
-      <button className="bg-white text-[#1e1e1e] mt-[2rem] w-fit px-8 py-2 rounded-[7px] cursor-pointer">
-        Contact Us
-      </button>
-    </Link>
-  </div>
-
-  {/* Div 3: Image */}
-  <div className="order-2 md:col-start-2 md:row-span-2 h-[200px] md:h-full bg-[url('/5.webp')] bg-center bg-cover rounded-[25px]"></div>
-</div>
-
-
-
-     </>
+      </section>
+    </>
   );
 }
