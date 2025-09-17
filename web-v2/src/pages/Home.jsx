@@ -14,6 +14,7 @@ import LandingPage from "@/components/LandingPage";
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 
+
 import Pricing from "@/components/Pricing";
 export default function Home() {
   const [Current, SetCurrent] = useState(0);
@@ -196,7 +197,7 @@ export default function Home() {
           <LandingPage></LandingPage>
 
           <WhyChooseUs></WhyChooseUs>
-
+          
           <section className="w-full h-auto flex items-center justify-center md:hidden p-2 mt-[5rem]">
             <div className="w-full items-center justify-center flex flex-col p-8 rounded-[7px] relative bg-[#1e1e1e] text-white mb-[4rem] gap-4 overflow-hidden z-10">
               <div className="w-[13rem] h-[13rem] absolute top-[-55%] left-[-5%] bg-[#2163f1] blur-[4rem] opacity-200 z-[-1]"></div>

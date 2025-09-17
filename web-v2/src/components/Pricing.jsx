@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export default function Pricingx() {
+export default function Pricing() {
   return (
     <>
       <section><h1 className="text-[2rem] tracking-tighter text-[#2264f1] sm:text-[3rem] w-[100%] shrink-0 mb-[3rem] md:mb-[4rem] px-[2rem] max-2xl:px-[3rem] max-md:px-4">
