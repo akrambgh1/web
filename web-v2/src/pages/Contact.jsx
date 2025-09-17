@@ -64,7 +64,7 @@ export default function Contact() {
         message: "",
         acceptTerms: false,
       });
-      setTimeout(() => navigate("/"), 1000);
+     
     } catch (error) {
       console.error("Submission error:", error);
       let errMsg = "Submission failed.";
@@ -92,9 +92,9 @@ export default function Contact() {
       </Helmet>
 
       <main>
-        <div className="min-h-[100svh] bg-white grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 p-4 md:p-8">
+        <div className="min-h-[100svh]   bg-white grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-4 p-4 md:p-8">
           {/* Div 1: Title */}
-          <div className="order-1 md:col-start-1 md:row-start-1 flex items-center justify-center">
+          <div className="order-1 hidden  md:col-start-1 md:row-start-1 md:flex items-center justify-center">
             <h1 className="text-[2.25rem] md:text-[4rem] lg:text-[6rem] select-none font-[500] tracking-tighter text-[#1e1e1e] uppercase">
               Get in Touch
             </h1>
@@ -105,7 +105,7 @@ export default function Contact() {
           <Card className="order-3 md:col-start-1 md:row-start-2 bg-[#1e1e1e] text-white rounded-2xl p-2 md:p-8 flex flex-col justify-end gap-4 border-[2px] relative">
             
           
-            <CardHeader className="md:absolute relative w-full top-0 left-0 p-2 md:p-4 flex justify-between items-center">
+            <CardHeader className="absolute  w-full top-0 left-0 p-2 md:p-4 flex justify-between items-center">
               <div className="flex items-center gap-2">
                 <div className="w-2 h-2 rounded-full bg-white"></div>
                 <CardTitle className="tracking-tighter font-[500]">Welcome</CardTitle>
@@ -143,7 +143,7 @@ export default function Contact() {
                       id="message"
                       name="message"
                      
-                      className={"resize-none md:h-[150px]"}
+                      className={"resize-none h-20 md:h-[150px]"}
                       placeholder="Type your message here."
                       value={formData.message}
                       onChange={handleChange}
@@ -174,7 +174,12 @@ export default function Contact() {
           
         
           {/* Div 3: Image */}
-          <div className="order-2 md:col-start-2 md:row-span-2 h-[90px] md:h-[200px] md:h-full bg-[url('/7.webp')] bg-center bg-cover md:rounded-[25px] rounded-xl"></div>
+          
+          <div className="order-2 md:col-start-2 md:row-span-2 h-full p-5 flex justify-start items-end bg-[url('/7.webp')] bg-center bg-cover md:rounded-[25px] rounded-xl">
+            <h1 className="text-[2.25rem] md:text-[4rem] lg:text-[6rem] md:hidden  select-none font-[500] tracking-tighter text-white uppercase">
+              Get in Touch
+            </h1></div>
+
         </div>
          
         

@@ -7,7 +7,7 @@ function validateEmail(email) {
 }
 
 function checkDomain(domain) {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     dns.resolveMx(domain, (err, addresses) => {
       if (err || !addresses || addresses.length === 0) {
         resolve(false);
@@ -19,12 +19,14 @@ function checkDomain(domain) {
 }
 
 const submitForm = async (req, res) => {
-  const { name, email, message} = req.body;
+  const { name, email, message, acceptTerms } = req.body;
 
-   if (
-  !name?.trim() ||
-  !email?.trim() ) {
+  if (!name?.trim() || !email?.trim()) {
     return res.status(400).json({ error: 'All fields are required.' });
+  }
+
+  if (!acceptTerms) {
+    return res.status(400).json({ error: 'You must accept the terms and conditions.' });
   }
 
   if (!validateEmail(email)) {
@@ -45,16 +47,12 @@ const submitForm = async (req, res) => {
 
     await newForm.save();
 
-    console.log('Form Data Received:', { name, email, message});
+    console.log('Form Data Received:', { name, email, message });
 
-    // Emit real-time update
-    req.io.emit('newForm', {
-      name,
-      email,
-      message
-      
-      
-    });
+    // Real-time emit (optional)
+    if (req.io) {
+      req.io.emit('newForm', { name, email, message });
+    }
 
     res.status(201).json({ message: 'Form submitted successfully!' });
   } catch (error) {
@@ -62,15 +60,17 @@ const submitForm = async (req, res) => {
     res.status(500).json({ error: 'Server error while saving form data.' });
   }
 };
+
 const getAllForms = async (req, res) => {
   try {
-    const forms = await formSchema.find().sort({ createdAt: -1 }); // Sort by newest
+    const forms = await formSchema.find().sort({ createdAt: -1 });
     res.status(200).json(forms);
   } catch (error) {
     console.error('Error fetching forms:', error);
     res.status(500).json({ error: 'Failed to fetch forms.' });
   }
 };
+
 const validStatuses = ['pending', 'in progress', 'finished', 'archived'];
 
 const updateFormStatus = async (req, res) => {
@@ -97,7 +97,8 @@ const updateFormStatus = async (req, res) => {
   }
 };
 
-
-module.exports = { submitForm, getAllForms ,updateFormStatus };
-
-
+module.exports = {
+  submitForm,
+  getAllForms,
+  updateFormStatus
+};
