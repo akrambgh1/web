@@ -1,11 +1,19 @@
-module.exports = {
-  darkMode: "class", // ✅ this enables class-based dark mode
-  content: [
-    "./src/**/*.{js,ts,jsx,tsx}", // ✅ include your src files
-    "./public/index.html",
-  ],
-  theme: {
-    extend: {},
+export const darkMode = "class";
+export const content = [
+  "./src/**/*.{js,ts,jsx,tsx}",
+  "./public/index.html",
+];
+export const theme = {
+  extend: {
+    keyframes: {
+      scroll: {
+        "0%": { transform: "translateY(0)" },
+        "100%": { transform: "translateY(-50%)" }, // move up one copy
+      },
+    },
+    animation: {
+      scroll: "scroll 10s linear infinite",
+    },
   },
-  plugins: [],
 };
+export const plugins = [];

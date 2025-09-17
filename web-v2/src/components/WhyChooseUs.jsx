@@ -46,7 +46,7 @@ export default function WhyChooseUs() {
             <div className="grid max-xl:flex max-xl:flex-col max-xl:gap-[4rem] gap-y-6 grid-cols-18 sm:gap-x-5">
               <div className="relative sm:col-span-7">
                 <div className="sticky top-[40vh] w-full flex flex-col gap-y-5 sm:gap-y-8 ">
-                  <p className="text-base sm:text-[1.5rem] h-auto font-[500] tracking-tighter">
+                  <p className="text-base sm:text-[1.5rem] h-auto font-[500] tracking-tighter max-xl:w-[70%] max-md:w-full">
                     With weblocators step into a universe where creativity meets
                     professionalism, sprinkled with a dash of cosmic charm.
                     Whether you’re a future collaborator or a valued client,

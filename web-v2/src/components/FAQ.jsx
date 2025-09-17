@@ -16,7 +16,7 @@ export default function FAQ() {
           </p>
         </div>
 
-        <div className="flex flex-col gap-[1rem] w-[60%] max-md:w-full">
+        <div className="flex flex-col gap-[1rem] w-[60%] max-lg:w-[90%] max-md:w-full">
           <Accordion
             title="What services does your agency offer?"
             text="We offer a full range of web development services, including custom website design, front-end and back-end development, e-commerce solutions, SEO optimization, website maintenance, and hosting support. We also specialize in integrating third-party tools, APIs, and security solutions."
