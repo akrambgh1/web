@@ -63,7 +63,7 @@ export default function AboutUs() {
       >
         {/* example animated element with scroll */}
         
-        <div className="h-[100dvh] w-full flex flex-col gap-8 items-center p-20 max-md:p-4 mb-[5rem]">
+        <div className=" md:h-[100dvh] min-h-[100dvh] w-full flex flex-col gap-8 items-center p-20 max-md:p-4 mb-[5rem]">
           <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
             <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/6.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
@@ -190,7 +190,7 @@ export default function AboutUs() {
                   the open, making space for dialogue, iteration, and shared
                   discovery.
                 </h1>
-                <h1 className="absolute bottom-8 left-8 text-[2rem] text-[#9ea2ae] max-md:text-[1rem]">
+                <h1 className="absolute bottom-8 left-8 text-[2rem] text-[#9ea2ae] ">
                   04
                 </h1>
               </div>
