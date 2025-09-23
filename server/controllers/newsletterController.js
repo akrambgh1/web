@@ -1,6 +1,5 @@
-const Newsletter = require('../models/newsletter'); // Capital N because it's a model
+const newsLetterSchema = require('../models/newsletter');
 
-// Add a new email to newsletter
 const newsletter = async (req, res) => {
   const { email } = req.body;
 
@@ -9,13 +8,7 @@ const newsletter = async (req, res) => {
   }
 
   try {
-    // optional: check for existing email first
-    const existing = await Newsletter.findOne({ email });
-    if (existing) {
-      return res.status(409).json({ error: 'This email is already subscribed.' });
-    }
-
-    const newLetter = new Newsletter({ email });
+    const newLetter = new newsLetterSchema({ email });
     await newLetter.save();
     res.status(201).json({ message: 'Email submitted successfully!' });
   } catch (error) {
@@ -27,7 +20,7 @@ const newsletter = async (req, res) => {
 // Fetch all the emails
 const getNewsLetter = async (req, res) => {
   try {
-    const letters = await Newsletter.find().sort({ createdAt: -1 });
+    const letters = await newsLetterSchema.find().sort({ createdAt: -1 }); // Sorting by createdAt in descending order
     res.status(200).json(letters);
   } catch (error) {
     console.error('Error fetching letters:', error);
@@ -35,4 +28,4 @@ const getNewsLetter = async (req, res) => {
   }
 };
 
-module.exports = { newsletter, getNewsLetter };
+module.exports = { newsletter, getNewsLetter }; // Ensure both functions are exported
