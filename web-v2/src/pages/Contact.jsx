@@ -57,25 +57,28 @@ export default function Contact() {
       const res = await axios.post("/api/form", formData, {
         headers: { "Content-Type": "application/json" },
       });
-      toast.success(res.data.message || "Form submitted successfully!");
-      setFormData({
-        name: "",
-        email: "",
-        message: "",
-        acceptTerms: false,
-      });
+
+  
+  toast.success(res.data.message || "Form submitted successfully!");
+  setFormData({
+    name: "",
+    email: "",
+    message: "",
+    acceptTerms: false,
+  });
+} catch (error) {
+  console.error("Submission error:", error);
+  let errMsg = "Submission failed.";
+  if (error.response) {
+    errMsg =
+      error.response.data?.error ||
+      error.response.data?.message ||
+      "Something went wrong.";
+  }
+  toast.error(errMsg);
+}
+
      
-    } catch (error) {
-      console.error("Submission error:", error);
-      let errMsg = "Submission failed.";
-      if (error.response) {
-        errMsg =
-          error.response.data?.error ||
-          error.response.data?.message ||
-          "Something went wrong.";
-      }
-      toast.error(errMsg);
-    }
   };
 
   return (
