@@ -131,13 +131,13 @@ export default function AboutUs() {
           </div>
         </div>
 
-        <section className="h-[100vh] flex flex-col items-end max-xl:h-fit mt-[5rem]">
+        <section className="h-[40vh] flex flex-col items-end max-xl:h-fit mt-[5rem]">
           <div className="flex flex-col gap-4 w-[100%]">
             <h1 className="text-[1.5rem] font-[500] tracking-tighter ml-[2.5rem]">
               What we promise!
             </h1>
 
-            <div className="flex border-y-[1px] h-[70vh] border-[#dddfe7] max-xl:flex max-xl:flex-col max-xl:w-full max-xl:h-fit">
+            <div className="flex border-y-[1px] h-[40vh] border-[#dddfe7] max-xl:flex max-xl:flex-col max-xl:w-full max-xl:h-fit">
               <div className="border-r-[1px] relative p-8 max-xl:h-[50vh] max-xl:border-b-[1px]">
                 <h1 className="tracking-tighter text-[1.5rem] text-[#9ea2ae] max-md:text-[1rem]">
                   <span className="text-black uppercase font-[500]">

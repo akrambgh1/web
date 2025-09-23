@@ -17,7 +17,7 @@ export default function Pricing() {
           </p>
         </div>
 
-        <div className="p-10 justify-center md:w-[45%] h-[28rem] flex flex-col gap-8 border bg-[#000] text-white border-[#eee] rounded-[10px]"><h2 className="text-lg md:text-2xl font-semibold"> What Influences the Price?</h2>
+        <div className="p-10 justify-center md:w-[45%] h-[28rem] flex flex-col gap-8 border bg-[#111111] text-white border-[#eee] rounded-[10px]"><h2 className="text-lg md:text-2xl font-semibold"> What Influences the Price?</h2>
                     <div>
               
               <ul className="list-disc list-inside mt-2 space-y-2">

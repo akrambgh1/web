@@ -28,11 +28,7 @@ export default function Footer() {
             <a href="https://www.linkedin.com/company/weblocators" target="_blank" rel="noopener noreferrer" className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
         <img src="/linkedin.png" alt="LinkedIn" /> </a>
           </div>
-          <div className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
-             <a href="https://dribbble.com/weblocators" target="_blank" rel="noopener noreferrer" className="flex-1 h-[15vh] bg-[#c0dbff] rounded-[10px] flex items-center justify-center">
-        <img src="/dribble.png" alt="Dribbble" />
-      </a>
-          </div>
+          
         </div>
 
         <div className="w-full flex gap-4 rounded-[15px] max-md:flex-col">
