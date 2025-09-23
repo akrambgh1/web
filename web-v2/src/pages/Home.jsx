@@ -142,7 +142,7 @@ export default function Home() {
   return (
     <>
        <Helmet>
-       
+       <title>WebLocators – Web Dev Agency</title> 
         <meta
           name="description"
           content="Weblocators is a modern web agency providing professional website creation and global digital services. We help businesses build their online presence."
