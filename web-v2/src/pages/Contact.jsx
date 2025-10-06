@@ -28,7 +28,7 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
-    acceptTerms: false,
+    acceptTerms: true,
   });
 
   const handleChange = (e) => {
@@ -64,7 +64,7 @@ export default function Contact() {
     name: "",
     email: "",
     message: "",
-    acceptTerms: false,
+    acceptTerms: true,
   });
 } catch (error) {
   console.error("Submission error:", error);
@@ -156,14 +156,7 @@ export default function Contact() {
                       Your message will be sent to our support team.
                     </p>
                   </div>
-                  <div className="flex items-center space-x-2">
-                    <Checkbox
-                      id="terms"
-                      checked={formData.acceptTerms}
-                      onCheckedChange={handleCheckboxChange}
-                    />
-                    <Label htmlFor="terms">Accept terms and conditions</Label>
-                  </div>
+                 
                 </div>
               </form>
             </CardContent>

@@ -65,7 +65,7 @@ export default function AboutUs() {
         
         <div className=" md:h-[100dvh] min-h-[100dvh] w-full flex flex-col gap-8 items-center p-20 max-md:p-4 mb-[5rem]">
           <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
-            <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/6.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+            <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/7.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
                 Who we are
               </p>
@@ -92,7 +92,7 @@ export default function AboutUs() {
           </div>
 
           <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
-            <div className="w-[40%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/3.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+            <div className="w-[40%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/5.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
                 How We Work
               </p>
@@ -130,7 +130,7 @@ export default function AboutUs() {
             </div>
           </div>
         </div>
-
+{/* What we promise section 
         <section className="h-[40vh] flex flex-col items-end max-xl:h-fit mt-[5rem]">
           <div className="flex flex-col gap-4 w-[100%]">
             <h1 className="text-[1.5rem] font-[500] tracking-tighter ml-[2.5rem]">
@@ -197,7 +197,7 @@ export default function AboutUs() {
             </div>
           </div>
         </section>
-
+*/  }
         <section
           className="relative h-[70dvh] max-md:h-[100vh] mt-[5rem]"
           style={{ clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)" }}
