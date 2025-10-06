@@ -65,7 +65,7 @@ export default function AboutUs() {
         
         <div className=" md:h-[100dvh] min-h-[100dvh] w-full flex flex-col gap-8 items-center p-20 max-md:p-4 mb-[5rem]">
           <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
-            <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/7.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+            <div className="w-[60%] h-full bg-[url('/7.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
                 Who we are
               </p>
@@ -78,7 +78,7 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <div className="w-[40%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/4.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+            <div className="w-[40%] h-full bg-[url('/4.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
                 Beyond the Work
               </p>
@@ -92,7 +92,7 @@ export default function AboutUs() {
           </div>
 
           <div className="h-1/2 w-[80%] flex gap-4 max-md:flex-col max-md:w-full">
-            <div className="w-[40%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/5.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+            <div className="w-[40%] h-full bg-[url('/5.webp')] bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
                 How We Work
               </p>
@@ -105,7 +105,7 @@ export default function AboutUs() {
               </p>
             </div>
 
-            <div className="w-[60%] h-full bg-[linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.2)),url('/6.jpg')]  bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
+            <div className="w-[60%] h-full bg-[url('/6.jpg')]  bg-center bg-cover rounded-[15px] max-md:w-full relative p-8 flex flex-col justify-between">
               <p className="text-[#ffffff] font-[500] tracking-tighter text-[3rem]">
                 Our Philosophy
               </p>
